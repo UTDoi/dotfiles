@@ -1,0 +1,7 @@
+// Empty
+[
+  {
+    "key": "shift+cmd+o",
+    "command": "workbench.action.duplicateWorkspaceInNewWindow"
+  }
+]

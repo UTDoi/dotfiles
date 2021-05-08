@@ -1,0 +1,23 @@
+{
+  // ウィンドウ設定
+  "window.zoomLevel": 1,
+  // エディター設定
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "all", // 空白文字を表示
+  "editor.wordWrap": "on", // 行の折り返し
+  "editor.insertSpaces": true, // Tabキーで半角スペースを入力
+  "editor.detectIndentation": false, // ファイルごとのタブサイズとインデントサイズ設定を引き継がない
+  "editor.minimap.enabled": false, // ミニマップスライダーを非表示
+  "editor.lineHeight": 22,
+  //ワークベンチ設定
+  "workbench.colorTheme": "Iceberg",
+  "workbench.iconTheme": "vscode-icons",
+  //vscode-proto3設定用
+  "diffEditor.ignoreTrimWhitespace": true,
+  "ruby.intellisense": "rubyLocate",
+  "sync.gist": "d9178e8889504da40c9b3dd32e6e3c58",
+  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "editor.fontFamily": "Myrica M",
+  "files.insertFinalNewline": true,
+  "editor.fontSize": 13,
+}
