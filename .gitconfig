@@ -30,4 +30,4 @@
 	allowed = AKIAIOSFODNN7EXAMPLE
 	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 [commit]
-	template = /Users/doi-yutaro/commit_template
+	template = ~/.commit_template

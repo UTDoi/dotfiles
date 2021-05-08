@@ -1,4 +1,4 @@
 export DOTPATH=$HOME/dotfiles
-export ZDOTDIR=$DOTPATH/.zsh
+export ZDOTDIR=$DOTPATH/zsh
 
 . $ZDOTDIR/.zshenv

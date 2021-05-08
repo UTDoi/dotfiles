@@ -9,6 +9,7 @@ harg.iceberg
 hashicorp.terraform
 huang12zheng.protobuf-helper
 jebbs.plantuml
+jpoissonnier.vscode-styled-components
 kaiwood.endwise
 mechatroner.rainbow-csv
 mermade.openapi-lint
@@ -26,6 +27,7 @@ Shan.code-settings-sync
 shardulm94.trailing-spaces
 sporto.rails-go-to-spec
 th7org.eco
+thekalinga.bootstrap4-vscode
 vscode-icons-team.vscode-icons
 wingrunr21.vscode-ruby
 wmaurer.change-case
