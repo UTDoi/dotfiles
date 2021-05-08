@@ -1,4 +1,4 @@
-DOTFILES_EXCLUDES  := .DS_Store .git .gitmodules
+DOTFILES_EXCLUDES  := .DS_Store .git
 DOTFILES_TARGET    := $(wildcard .??*)
 DOTFILES_FILES     := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 VSCODE_DOT_DIR := vscode
