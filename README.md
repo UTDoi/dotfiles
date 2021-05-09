@@ -16,7 +16,7 @@ $ cd ~/dotfiles
 $ make install
 $ make deploy
 $ echo $(brew --prefix)/bin/zsh | sudo tee -a /etc/shells
-$ sudo chsh -s $(brew --prefix)/bin/zsh
+$ chsh -s $(brew --prefix)/bin/zsh
 ```
 
 ## dump
