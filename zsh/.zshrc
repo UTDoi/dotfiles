@@ -1,6 +1,21 @@
 source ~/.zinit/bin/zinit.zsh
 
-eval "$(anyenv init -)"
+: 'anyenv setting' && {
+  eval "$(anyenv init -)"
+
+  ANYENV_DEFINITION_ROOT=${HOME}/.config/anyenv/anyenv-install
+  ANYENV_ROOT=$(anyenv root)
+
+  if [ ! -d ${ANYENV_DEFINITION_ROOT} ]; then
+    anyenv install --init
+  fi
+
+  if [[ ! -d ${ANYENV_ROOT}/plugins/anyenv-update ]]; then
+    mkdir -p ${ANYENV_ROOT}/plugins
+    git clone https://github.com/znz/anyenv-update.git ${ANYENV_ROOT}/plugins/anyenv-update
+  fi
+}
+
 eval "$(direnv hook zsh)"
 
 alias gcinolint='SKIP_ESLINT=1 git ci'
