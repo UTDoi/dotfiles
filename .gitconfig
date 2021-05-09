@@ -1,33 +1,42 @@
 [user]
   name = UTDoi
-	email = doisaltu1899@gmail.com
+  email = doisaltu1899@gmail.com
 [color]
-	ui = auto
-[alias]
-	co = checkout
-	ci = commit
-	st = status
-	br = branch
-	pull = pull --rebase
+  ui = auto
 [core]
-	editor = vim -c \"set fenc=utf-8\"
-	excludesfile = /Users/doi-yutaro/.gitignore_global
-
-[credential]
-    helper = osxkeychain
-
+  editor = vim
+  excludesfile = ~/.gitignore
+  quotepath = false
+  pager = less
+  ignorecase = false
+[alias]
+  a = add
+  br = branch
+  ci = commit
+  co = checkout
+  f = fetch
+  st = status
+# TODO: includeIf で特定repoの場合のみ読み替えするようにする
 [url "ssh://git@github.com"]
-     insteadOf = git://git@github.com
-
+  insteadOf = git://git@github.com
 [url "ssh://github.com"]
-     insteadOf = https://github.com
-
+  insteadOf = https://github.com
+[credential]
+  helper = osxkeychain
 [secrets]
-	providers = git secrets --aws-provider
-	patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
-	patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
-	patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
-	allowed = AKIAIOSFODNN7EXAMPLE
-	allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+  # for GCP
+  patterns = private_key
+  patterns = private_key_id
+  # for AWS
+  providers = git secrets --aws-provider
+  patterns = (A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}
+  patterns = (\"|')?(AWS|aws|Aws)?_?(SECRET|secret|Secret)?_?(ACCESS|access|Access)?_?(KEY|key|Key)(\"|')?\\s*(:|=>|=)\\s*(\"|')?[A-Za-z0-9/\\+=]{40}(\"|')?
+  patterns = (\"|')?(AWS|aws|Aws)?_?(ACCOUNT|account|Account)_?(ID|id|Id)?(\"|')?\\s*(:|=>|=)\\s*(\"|')?[0-9]{4}\\-?[0-9]{4}\\-?[0-9]{4}(\"|')?
+  allowed = AKIAIOSFODNN7EXAMPLE
+  allowed = wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+[init]
+  templatedir = ~/.git_template
 [commit]
-	template = ~/.commit_template
+  template = ~/.commit_template
+[pull]
+  rebase = false
