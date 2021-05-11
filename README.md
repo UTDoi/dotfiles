@@ -19,6 +19,14 @@ $ echo $(brew --prefix)/bin/zsh | sudo tee -a /etc/shells
 $ chsh -s $(brew --prefix)/bin/zsh
 ```
 
+## compile
+After installing or updating dotfiles, execute compile command.
+Your zsh will initialize more faster.
+
+```
+$ make compile
+```
+
 ## dump
 Dump homebrew packages and vscode extensions list to files.
 

@@ -12,6 +12,9 @@ deploy:
 install:
 	./install.sh
 
+compile:
+	@$(brew --prefix)/bin/zsh ./zcompile.sh
+
 dump:
 	rm -f Brewfile
 	brew bundle dump

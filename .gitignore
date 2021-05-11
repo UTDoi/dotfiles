@@ -1,2 +1,3 @@
 Brewfile.lock.json
-zsh/.zcompdump
+*.zwc
+.zcompdump
