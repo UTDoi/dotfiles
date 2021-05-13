@@ -6,6 +6,7 @@ tap "homebrew/services"
 tap "sanemat/font"
 tap "versent/taps"
 brew "anyenv"
+brew 'awscli'
 brew "python@3.9"
 brew "dep"
 brew "direnv"
