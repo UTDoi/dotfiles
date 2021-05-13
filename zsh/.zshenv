@@ -6,6 +6,12 @@
   export LC_TYPE=${LANGUAGE}
 }
 
-export EDITOR='vim'
-export VISUAL='less'
-export PAGER='less'
+: 'editor & viewer' && {
+  export EDITOR='vim'
+  export VISUAL='less'
+  export PAGER='less'
+}
+
+: 'others' && {
+  export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+}
