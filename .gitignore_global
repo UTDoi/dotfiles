@@ -1,0 +1,15 @@
+# Mac
+.DS_Store
+
+# editors
+.idea
+.vscode
+
+# temporary files
+,/
+
+# direnv
+.envrc
+
+# nodejs
+node_modules/

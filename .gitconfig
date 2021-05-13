@@ -5,7 +5,7 @@
   ui = auto
 [core]
   editor = vim
-  excludesfile = ~/.gitignore
+  excludesfile = ~/.gitignore_global
   quotepath = false
   pager = less
   ignorecase = false
