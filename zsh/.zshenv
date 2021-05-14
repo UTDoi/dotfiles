@@ -23,4 +23,5 @@
 
 : 'others' && {
   export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
+  export LISTMAX=0
 }
