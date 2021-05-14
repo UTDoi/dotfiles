@@ -17,7 +17,7 @@
   "ruby.intellisense": "rubyLocate",
   "sync.gist": "d9178e8889504da40c9b3dd32e6e3c58",
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-  "editor.fontFamily": "Myrica M",
+  "editor.fontFamily": "HackGenNerd",
   "files.insertFinalNewline": true,
   "editor.fontSize": 13,
 }
