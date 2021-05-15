@@ -8,8 +8,6 @@ xcode-select --install
 ```
 
 ## install
-TODO: 以下の手順をまとめてやってくれるshell scriptをexc/installer.sh に用意し、`$ bash -c "$(curl -L dot.UTDoi.com)"`みたいな感じで実行できるようにする
-
 ```
 $ git clone https://github.com/UTDoi/dotfiles.git ~/dotfiles
 $ cd ~/dotfiles
@@ -19,9 +17,17 @@ $ echo $(brew --prefix)/bin/zsh | sudo tee -a /etc/shells
 $ chsh -s $(brew --prefix)/bin/zsh
 ```
 
+### optional
+If you'd like to save iTerm2 setting automatically, open
+```
+Preferences > General > Preferences > Save changes
+```
+and set `Automatically`.
+
+
 ## compile
 After installing or updating dotfiles, execute compile command.
-Your zsh will initialize more faster.
+Your zsh will initialize faster.
 
 ```
 $ make compile

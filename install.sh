@@ -1,5 +1,7 @@
 #!/bin/bash -eu
 
+script_dir=$(cd $(dirname $0); pwd)
+
 is_exists() {
   type "$1" >/dev/null 2>&1
   return $?
@@ -112,5 +114,9 @@ cat vscode/extensions | while read line
 do
   code --install-extension $line
 done
+
+log_info "load iTerm2 custom plist ..."
+defaults write com.googlecode.iterm2 "LoadPrefsFromCustomFolder" -bool true
+defaults write com.googlecode.iterm2 "PrefsCustomFolder" -string ${script_dir}/iterm2
 
 log_pass "Installation successful!"
