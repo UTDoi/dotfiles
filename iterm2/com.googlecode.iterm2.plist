@@ -512,7 +512,7 @@
 			<key>HotKey Key Code</key>
 			<integer>49</integer>
 			<key>HotKey Modifier Activation</key>
-			<integer>3</integer>
+			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
 			<integer>655360</integer>
 			<key>HotKey Window Animates</key>
