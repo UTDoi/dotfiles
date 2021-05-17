@@ -907,7 +907,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>5</integer>
+			<integer>6</integer>
 			<key>Working Directory</key>
 			<string>/Users/doi</string>
 		</dict>
