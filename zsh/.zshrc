@@ -98,6 +98,7 @@ fi
   alias k='kubectl'
   alias ls='ls -G'
   alias login='exec $SHELL -l'
+  alias j='z'
 }
 
 : 'functions' && {
@@ -111,32 +112,36 @@ fi
 }
 
 : 'zinit plugins' && {
-  # Powerlevel10k
   zinit ice depth=1 atload"!source ~/.p10k.zsh"
   zinit light romkatv/powerlevel10k
 
-  # completion
-  # zinit ice wait'0'; zinit load zsh-users/zsh-completions
-  # zinit ice wait'0'; zinit load zsh-users/zsh-autosuggestions
-  # zinit ice wait'0'; zinit load glidenote/hub-zsh-completion
-  # zinit ice wait'0'; zinit load Valodim/zsh-curl-completion
-  # zinit ice wait'0'; zinit load docker/cli
-  # zinit ice wait'0'; zinit load nnao45/zsh-kubectl-completion
+  zinit ice wait lucid atload'_zsh_autosuggest_start'
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'; ZSH_AUTOSUGGEST_STRATEGY=(history completion); bindkey 'J' autosuggest-accept
+  zinit light zsh-users/zsh-autosuggestions
 
-  # # coloring
-  # zinit load chrissicool/zsh-256color
-  # zinit load zsh-users/zsh-syntax-highlighting
+  zinit ice wait lucid as"program" src"z.sh"
+  zinit load "rupa/z"
 
-  # # expanding aliases
-  # zinit load momo-lab/zsh-abbrev-alias
+  zinit ice wait'1' lucid
+  zinit light zdharma/fast-syntax-highlighting
 
-  # # emoji
-  # if (($+commands[jq])); then
-  #   zinit ice wait'0'; zinit load b4b4r07/emoji-cli
-  # fi
+  zinit ice wait'1' lucid as"program" pick"hub/etc/hub.zsh_completion"
+  zinit light github/hub
 
-  # # Find and display frequently used displays
-  # zinit load rupa/z
+  zinit ice wait'2' lucid atload"zicompinit; zicdreplay" blockf for \
+    zsh-users/zsh-completions
+
+  zinit ice wait'2' lucid as"program" pick "contrib/completion/git-completion.zsh"
+  zinit light git/git
+
+  zinit ice wait'2' lucid as"program" pick"bin/git-dsf"
+  zinit light zdharma/zsh-diff-so-fancy
+
+  zinit ice wait'3' lucid as"program" pick"cli/contrib/completion/zsh/_docker" atload"export DOCKER_BUILDKIT=1"
+  zinit light docker/cli
+
+  zinit ice wait'3' lucid as"program" pick"compose/contrib/completion/zsh" atload"export COMPOSE_DOCKER_CLI_BUILD=1"
+  zinit light docker/compose
 }
 
 : 'initialize completion' && {
