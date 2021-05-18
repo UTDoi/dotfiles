@@ -10,6 +10,7 @@ deploy:
 	@$(foreach val, $(VSCODE_SETTING_FILES), ln -sfnv $(abspath $(VSCODE_DOT_DIR)/$(val)) $(VSCODE_SETTING_DIR)/$(val);)
 
 install:
+	./macos.sh
 	./install.sh
 
 compile:
