@@ -111,6 +111,19 @@ fi
   }
 }
 
+: 'bindkeys' && {
+  bindkey '^a' beginning-of-line
+  bindkey '^b' backward-char
+  bindkey '^e' end-of-line
+  bindkey '^f' forward-char
+  bindkey '^k' kill-line
+  bindkey '^n' down-line-or-history
+  bindkey '^p' up-line-or-history
+  bindkey '^r' history-incremental-search-backward # TODO: 後で fzf 使った widget に変える
+  bindkey 'ƒ' forward-word # Option + f
+  bindkey '∫' backward-word # Option + b
+}
+
 : 'zinit plugins' && {
   zinit ice depth=1 atload"!source ~/.p10k.zsh"
   zinit light romkatv/powerlevel10k
