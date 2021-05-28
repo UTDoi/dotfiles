@@ -112,10 +112,16 @@ fi
   alias fspec='SKIP_SEED=1 bin/rspec'
   alias rubocop='bundle ex rubocop -a'
   alias gipf='git push -f origin HEAD'
-  alias k='kubectl'
   alias ls='ls -G'
   alias login='exec $SHELL -l'
   alias j='z'
+
+  if (($+commands[kubectl])); then
+    alias k="kubectl"
+    alias kc="kubectl config current-context"
+    alias ku="kubectl config use-context"
+    alias kp="kubectl get pod"
+  fi
 }
 
 : 'functions' && {
