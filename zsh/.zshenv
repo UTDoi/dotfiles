@@ -7,7 +7,7 @@
 }
 
 : 'editor & viewer' && {
-  export EDITOR='vim'
+  export EDITOR='nvim'
   export VISUAL='less'
   export PAGER='less'
 }
