@@ -21,6 +21,13 @@
   }
 }
 
+: "fzf configuration" && {
+  export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git"'
+  export FZF_DEFAULT_OPTS='--height 60% --multi --reverse --border --ansi'
+  export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+  export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
+}
+
 : 'others' && {
   export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
   export LISTMAX=0

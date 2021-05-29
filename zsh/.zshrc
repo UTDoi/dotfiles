@@ -22,6 +22,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
+: 'fzf setting' && {
+  if [ ! -f ~/.fzf.zsh ]; then
+    $(brew --prefix)/opt/fzf/install
+  fi
+  source ~/.fzf.zsh
+}
+
 : 'zinit setting' && {
   source ~/.zinit/bin/zinit.zsh
 
@@ -160,7 +167,6 @@ fi
   bindkey '^k' kill-line
   bindkey '^n' down-line-or-history
   bindkey '^p' up-line-or-history
-  bindkey '^r' history-incremental-search-backward # TODO: 後で fzf 使った widget に変える
   bindkey 'ƒ' forward-word # Option + f
   bindkey '∫' backward-word # Option + b
 }
