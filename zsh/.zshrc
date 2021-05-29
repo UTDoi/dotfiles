@@ -112,9 +112,22 @@ fi
   alias fspec='SKIP_SEED=1 bin/rspec'
   alias rubocop='bundle ex rubocop -a'
   alias gipf='git push -f origin HEAD'
-  alias ls='ls -G'
   alias login='exec $SHELL -l'
   alias j='z'
+
+  if (($+commands[exa])); then
+    alias ls="exa -F"
+    alias ll="exa -hlBFS"
+    alias ld="exa -ld"
+    alias la="exa -aF"
+    alias lla="exa -alBFS --icons"
+  else
+    alias ls="ls -F"
+    alias ll="ls -hlS"
+    alias ld="echo 'Not found ld command.'"
+    alias la="ls -a"
+    alias lla="ls -ahlS"
+  fi
 
   if (($+commands[kubectl])); then
     alias k="kubectl"
