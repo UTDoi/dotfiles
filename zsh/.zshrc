@@ -150,13 +150,44 @@ fi
 }
 
 : 'functions' && {
-  function lintall ()
+  lintall ()
   {
     for jsfile in $(git st | awk '{print $2}' | grep -E '^front/javascripts/components/.+\.js$')
     do
         lint $jsfile
     done
   }
+
+  fbr() {
+    local branches=$(git branch -vv | fzf --prompt "[branch name]: " --query "$LBUFFER")
+    if [[ -n "$branches" ]]; then
+      BUFFER="git switch $(echo "$branches" | awk '{print $1}' | sed "s/.* //")"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N fbr
+
+  ghq-fcd() {
+    local selected_dir=$(ghq list -p | fzf --prompt "[repository]: " --preview 'bat --color always --style header,grid --line-range :100 {}/README.*' --query "$LBUFFER")
+    if [[ -n "$selected_dir" ]]; then
+      BUFFER="cd ${selected_dir}"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N ghq-fcd
+
+  fzf-z-search() {
+    local res=$(z | sort -rn | cut -c 12- | fzf)
+    if [ -n "$res" ]; then
+      BUFFER+="cd $res"
+      zle accept-line
+    else
+      return 1
+    fi
+  }
+  zle -N fzf-z-search
 }
 
 : 'bindkeys' && {
@@ -171,6 +202,9 @@ fi
   bindkey '∫' backward-word # Option + b
 
   bindkey 'ç' fzf-cd-widget # Option + c (override fzf ALT-C binding)
+  bindkey '^g' ghq-fcd
+  bindkey '^]' fbr
+  bindkey '^f' fzf-z-search
 }
 
 : 'zinit plugins' && {
