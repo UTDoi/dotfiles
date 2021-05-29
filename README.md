@@ -9,8 +9,8 @@ xcode-select --install
 
 ## install
 ```
-$ git clone https://github.com/UTDoi/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles
+$ git clone https://github.com/UTDoi/dotfiles.git ~/src/github.com/UTDoi/dotfiles
+$ cd ~/src/github.com/UTDoi/dotfiles
 $ make install
 $ make deploy
 $ echo $(brew --prefix)/bin/zsh | sudo tee -a /etc/shells
