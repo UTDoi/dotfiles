@@ -5,7 +5,7 @@ if [[ ! -n $TMUX ]] && [[ $- == *l* ]] && [[ $TERM_PROGRAM != "vscode" ]]; then
   fi
   create_new_session="Create New Session"
   ID="$ID\n${create_new_session}:"
-  ID="`echo $ID | peco | cut -d: -f1`"
+  ID="`echo $ID | fzf | cut -d: -f1`"
   if [[ "$ID" = "${create_new_session}" ]]; then
     tmux new-session \; source-file "$DOTPATH/tmux/new-session"
   elif [[ -n "$ID" ]]; then
