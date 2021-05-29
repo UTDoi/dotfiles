@@ -161,9 +161,6 @@ fi
   zinit ice wait'1' lucid
   zinit light zdharma/fast-syntax-highlighting
 
-  zinit ice wait'1' lucid as"program" pick"hub/etc/hub.zsh_completion"
-  zinit light github/hub
-
   zinit ice wait'2' lucid atload"zicompinit; zicdreplay" blockf for \
     zsh-users/zsh-completions
 
