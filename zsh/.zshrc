@@ -114,6 +114,7 @@ fi
   alias gipf='git push -f origin HEAD'
   alias login='exec $SHELL -l'
   alias j='z'
+  alias vim='nvim'
 
   if (($+commands[exa])); then
     alias ls="exa -F"
