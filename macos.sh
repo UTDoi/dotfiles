@@ -15,7 +15,6 @@ defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 defaults write NSGlobalDomain AppleInterfaceStyle -string "Dark"
 defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
-defaults write com.apple.inputmethod.Kotoeri 'JIMPrefLiveConversionKey' -bool false
 sudo nvram SystemAudioVolume=" "
 
 # Screencapture
@@ -23,7 +22,7 @@ mkdir -p ~/ss
 defaults write com.apple.screencapture location ~/ss/
 defaults write com.apple.screencapture name ""
 defaults write com.apple.screencapture type jpg
-defaults write com.apple.screencapture “disable-shadow” -bool yes
+defaults write com.apple.screencapture "disable-shadow" -bool yes
 
 # Dock
 defaults write com.apple.dock autohide -bool true
@@ -55,7 +54,6 @@ defaults -currentHost write -g com.apple.keyboard.modifiermapping.${keyboardid} 
 for app in \
   "Dock" \
   "Finder" \
-  "JapaneseIM" \
   "SystemUIServer"; do
   killall "$app" &> /dev/null
 done
