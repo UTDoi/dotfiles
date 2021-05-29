@@ -1012,7 +1012,7 @@
 			<key>Visual Bell</key>
 			<true/>
 			<key>Window Type</key>
-			<integer>6</integer>
+			<integer>1</integer>
 			<key>Working Directory</key>
 			<string>/Users/doi</string>
 		</dict>
