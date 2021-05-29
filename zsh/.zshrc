@@ -169,6 +169,8 @@ fi
   bindkey '^p' up-line-or-history
   bindkey 'ƒ' forward-word # Option + f
   bindkey '∫' backward-word # Option + b
+
+  bindkey 'ç' fzf-cd-widget # Option + c (override fzf ALT-C binding)
 }
 
 : 'zinit plugins' && {

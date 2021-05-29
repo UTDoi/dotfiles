@@ -26,6 +26,7 @@
   export FZF_DEFAULT_OPTS='--height 60% --multi --reverse --border --ansi'
   export FZF_CTRL_T_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
   export FZF_CTRL_T_OPTS='--preview "bat  --color=always --style=header,grid --line-range :100 {}"'
+  export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
 }
 
 : 'others' && {
