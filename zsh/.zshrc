@@ -178,6 +178,14 @@ fi
 }
 
 : 'initialize completion' && {
+  : 'for gh completion' && {
+    GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
+    if [ ! -f $GH_COMPLETION_PATH ]; then
+      touch $GH_COMPLETION_PATH
+      gh completion -s zsh > $GH_COMPLETION_PATH
+    fi
+  }
+
   autoload -U compinit && compinit
 
   : 'for awscli completion' && {
