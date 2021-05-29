@@ -129,6 +129,10 @@ fi
     alias lla="ls -ahlS"
   fi
 
+  if (($+commands[bat])); then
+    alias cat="bat --style header,grid,changes"
+  fi
+
   if (($+commands[kubectl])); then
     alias k="kubectl"
     alias kc="kubectl config current-context"
