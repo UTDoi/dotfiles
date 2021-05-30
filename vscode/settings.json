@@ -16,5 +16,13 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "ruby.intellisense": "rubyLocate",
   "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
-  "files.insertFinalNewline": true
+  "files.insertFinalNewline": true,
+  "vim.useSystemClipboard": true,
+  "vim.insertModeKeyBindings": [
+    {
+        "before": ["j", "j"],
+        "after": ["<Esc>"]
+    }
+  ],
+  "vim.hlsearch": true
 }
