@@ -29,6 +29,11 @@
   export FZF_ALT_C_OPTS="--select-1 --exit-0 --preview 'tree -C {} | head -200'"
 }
 
+: "aws saml login configuration" && {
+  export AWS_PROFILE=saml
+  export SAML2AWS_PROFILE=saml
+}
+
 : 'others' && {
   export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
   export LISTMAX=0

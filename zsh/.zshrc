@@ -188,6 +188,16 @@ fi
     fi
   }
   zle -N fzf-z-search
+
+  fzf-lsec2() {
+    local ip=$(lsec2 -c | fzf-tmux --prompt "[host]: " --query "$LBUFFER" | awk '{print $2}')
+    if [[ "$ip" != "" ]]; then
+      BUFFER="ssh -t -t $ip"
+      zle accept-line
+    fi
+    zle clear-screen
+  }
+  zle -N fzf-lsec2
 }
 
 : 'bindkeys' && {
@@ -205,6 +215,7 @@ fi
   bindkey '^g' ghq-fcd
   bindkey '^]' fbr
   bindkey '^f' fzf-z-search
+  bindkey '^s' fzf-lsec2
 }
 
 : 'zinit plugins' && {
