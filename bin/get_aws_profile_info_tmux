@@ -1,0 +1,42 @@
+#!/bin/sh
+
+get_aws_info () {
+  case $2 in
+    'x_principal_arn')
+      eval $1'_account_id'=$(echo $3 | awk -F ":" '{print $5}')
+      eval $1'_role_name'=$(echo $3 | awk -F ":" '{print $6}' | awk -F "/" '{print $2}')
+      ;;
+    'x_security_token_expires')
+      local EXPIRE=$(( $(gdate -d $3 +%s) - $(gdate +%s)))
+      local H=$(( $EXPIRE % 86400 / 3600 ))
+      local M=$(( $EXPIRE % 86400 % 3600 / 60 ))
+
+      if [ $H -le 0 ] && [ $M -le 9 ]; then
+        local COLOR="#[fg=colour197]"
+      else
+        local COLOR="#[fg=colour74]"
+      fi
+
+      if [ $EXPIRE -le 0 ]; then
+        TIMER="expired!!"
+      else
+        TIMER=$COLOR$(printf "%.2d:%.2d" $H $M)
+      fi
+
+      eval $1'_expire_timer'=$TIMER
+      ;;
+  esac
+}
+
+INI_FILE=${HOME}/.aws/credentials
+
+while IFS=' = ' read key value
+do
+  if [[ $key == \[*] ]]; then
+    section=$(echo $key | sed 's/[][]//g')
+  elif [[ $value ]]; then
+    get_aws_info $section $key $value
+  fi
+done < $INI_FILE
+
+echo "#[fg=colour74][saml] $saml_account_id/$saml_role_name $saml_expire_timer #[fg=colour74] [dev] $dev_account_id/$dev_role_name $dev_expire_timer#[default]"
