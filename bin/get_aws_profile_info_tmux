@@ -18,7 +18,7 @@ get_aws_info () {
       fi
 
       if [ $EXPIRE -le 0 ]; then
-        TIMER="expired!!"
+        TIMER="#[fg=colour197]expired"
       else
         TIMER=$COLOR$(printf "%.2d:%.2d" $H $M)
       fi
