@@ -122,6 +122,7 @@ fi
   alias login='exec $SHELL -l'
   alias j='z'
   alias vim='nvim'
+  alias pr='gh pr list --assignee UTDoi | fzf | cut -f1 | xargs -I {} gh pr checkout {}'
 
   if (($+commands[exa])); then
     alias ls="exa -F"
