@@ -1,0 +1,8 @@
+git_protocol: https
+editor: !!null vim
+prompt: enabled
+pager:
+aliases:
+  pc: pr checkout
+  ps: pr status
+  pv: pr view --web
