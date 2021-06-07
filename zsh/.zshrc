@@ -123,6 +123,7 @@ fi
   alias j='z'
   alias vim='nvim'
   alias pr='gh pr list --assignee UTDoi | fzf | cut -f1 | xargs -I {} gh pr checkout {}'
+  alias gbda="git branch | sed 's/\*//g' | grep -v -e 'master' -e 'develop' -e 'main' | xargs git branch -D"
 
   if (($+commands[exa])); then
     alias ls="exa -F"
