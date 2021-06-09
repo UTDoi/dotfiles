@@ -119,9 +119,6 @@ fi
 : 'aliases' && {
   alias gcinolint='SKIP_ESLINT=1 git ci'
   alias gip='git push origin HEAD'
-  alias lint='npm run eslint-fix'
-  alias fspec='SKIP_SEED=1 bin/rspec'
-  alias rubocop='bundle ex rubocop -a'
   alias gipf='git push -f origin HEAD'
   alias login='exec $SHELL -l'
   alias j='z'
@@ -156,14 +153,6 @@ fi
 }
 
 : 'functions' && {
-  lintall ()
-  {
-    for jsfile in $(git st | awk '{print $2}' | grep -E '^front/javascripts/components/.+\.js$')
-    do
-        lint $jsfile
-    done
-  }
-
   fbr() {
     local branches=$(git branch -vv | fzf --prompt "[branch name]: " --query "$LBUFFER")
     if [[ -n "$branches" ]]; then
