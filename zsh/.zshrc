@@ -57,6 +57,10 @@ fi
   eval "$(direnv hook zsh)"
 }
 
+: 'paths' && {
+  export PATH=$PATH:$DOTPATH/bin
+}
+
 : 'configuration for common' && {
   autoload -Uz colors && colors
 
