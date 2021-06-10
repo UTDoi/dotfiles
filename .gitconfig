@@ -11,6 +11,7 @@
   ignorecase = false
 [alias]
   a = add
+  bn = rev-parse --abbrev-ref HEAD
   br = branch
   ci = commit
   co = checkout
