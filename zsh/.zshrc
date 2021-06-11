@@ -217,7 +217,7 @@ fi
   zinit light romkatv/powerlevel10k
 
   zinit ice wait lucid atload'_zsh_autosuggest_start'
-  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'; bindkey '^j' autosuggest-accept
+  ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=248'; bindkey '^q' autosuggest-accept
   zinit light zsh-users/zsh-autosuggestions
 
   zinit ice wait lucid as"program" src"z.sh"
