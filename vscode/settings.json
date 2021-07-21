@@ -1,5 +1,4 @@
 {
-  "window.zoomLevel": 1,
   "editor.tabSize": 2,
   "editor.renderWhitespace": "all",
   "editor.wordWrap": "on",
@@ -24,5 +23,6 @@
         "after": ["<Esc>"]
     }
   ],
-  "vim.hlsearch": true
+  "vim.hlsearch": true,
+  "window.zoomLevel": 1
 }
