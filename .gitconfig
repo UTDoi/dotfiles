@@ -17,6 +17,7 @@
   co = checkout
   f = fetch
   st = status
+  cb = checkout -b
 [init]
   templatedir = ~/.git_template
 [commit]
