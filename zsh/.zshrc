@@ -265,5 +265,6 @@ fi
     autoload bashcompinit && bashcompinit
     AWS_COMPLETER_PATH=$(which aws_completer)
     complete -C ${AWS_COMPLETER_PATH}
+    complete -C ${AWS_COMPLETER_PATH} awslocal
   }
 }
