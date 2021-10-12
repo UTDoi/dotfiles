@@ -194,6 +194,12 @@ fi
     zle clear-screen
   }
   zle -N fzf-lsec2
+
+  get-kinesis-records() {
+    local shard_id=$(awslocal kinesis describe-stream --stream-name $argv | jq '.StreamDescription.Shards[0].ShardId' -r)
+    local iterator=$(awslocal kinesis get-shard-iterator --shard-id $shard_id --shard-iterator-type TRIM_HORIZON --stream-name $argv | jq '.ShardIterator' -r)
+    awslocal kinesis get-records --shard-iterator $iterator
+  }
 }
 
 : 'bindkeys' && {
