@@ -104,6 +104,12 @@ fi
 log_info "run brew bundle ..."
 brew bundle
 
+if !(is_exists "pip3"); then
+  log_fail "please install pip3!!!"
+fi
+log_info "installing pip libraries ..."
+pip3 install awscli-local
+
 if [ ! -d ~/.zinit ]; then
   mkdir ~/.zinit
   git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
