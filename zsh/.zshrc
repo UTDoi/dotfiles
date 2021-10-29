@@ -126,6 +126,7 @@ fi
   alias vim='nvim'
   alias pr='gh pr list --assignee UTDoi | fzf | cut -f1 | xargs -I {} gh pr checkout {}'
   alias gimtag='aws ecr describe-images --repository-name cfoalpha-app --image-ids imageTag=latest | jq -r ".imageDetails[].imageTags"'
+  alias dcns='docker ps | awk '\''{print $2}'\'''
 
   if (($+commands[exa])); then
     alias ls="exa -F"
