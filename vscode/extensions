@@ -1,9 +1,12 @@
 adpyke.vscode-sql-formatter
 bierner.markdown-preview-github-styles
+bradlc.vscode-tailwindcss
 christian-kohler.path-intellisense
 CoenraadS.bracket-pair-colorizer-2
+dbaeumer.vscode-eslint
 donjayamanne.githistory
 eamodio.gitlens
+esbenp.prettier-vscode
 flowtype.flow-for-vscode
 harg.iceberg
 hashicorp.terraform
@@ -20,6 +23,7 @@ saikou9901.evilinspector
 shardulm94.trailing-spaces
 sporto.rails-go-to-spec
 th7org.eco
+tombonnike.vscode-status-bar-format-toggle
 vscode-icons-team.vscode-icons
 vscodevim.vim
 wingrunr21.vscode-ruby

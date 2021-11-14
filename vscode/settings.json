@@ -24,5 +24,8 @@
     }
   ],
   "vim.hlsearch": true,
-  "window.zoomLevel": 1
+  "window.zoomLevel": 1,
+  "editor.formatOnPaste": false,
+  "editor.formatOnSave": false,
+  "editor.formatOnType": false
 }
