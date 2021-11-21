@@ -217,7 +217,7 @@ fi
   bindkey 'ç' fzf-cd-widget # Option + c (override fzf ALT-C binding)
   bindkey '^g' ghq-fcd
   bindkey '^]' fbr
-  bindkey '^f' fzf-z-search
+  bindkey '^z' fzf-z-search
   bindkey '^s' fzf-lsec2
 }
 
