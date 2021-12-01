@@ -12,7 +12,7 @@ brew "awscli"
 brew "bat"
 brew "glib"
 brew "tcl-tk"
-brew "coreutils", link: false
+brew "coreutils"
 brew "direnv"
 brew "exa"
 brew "fd"
