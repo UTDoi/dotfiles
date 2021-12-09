@@ -233,7 +233,7 @@ fi
   zinit load "rupa/z"
 
   zinit ice wait'1' lucid
-  zinit light zdharma/fast-syntax-highlighting
+  zinit light zdharma-continuum/fast-syntax-highlighting
 
   zinit ice wait'2' lucid atload"zicompinit; zicdreplay" blockf for \
     zsh-users/zsh-completions
@@ -242,7 +242,7 @@ fi
   zinit light git/git
 
   zinit ice wait'2' lucid as"program" pick"bin/git-dsf"
-  zinit light zdharma/zsh-diff-so-fancy
+  zinit light zdharma-continuum/zsh-diff-so-fancy
 
   zinit ice wait'3' lucid as"program" pick"cli/contrib/completion/zsh/_docker" atload"export DOCKER_BUILDKIT=1"
   zinit light docker/cli
