@@ -112,7 +112,7 @@ pip3 install awscli-local
 
 if [ ! -d ~/.zinit ]; then
   mkdir ~/.zinit
-  git clone https://github.com/zdharma/zinit.git ~/.zinit/bin
+  git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
 fi
 
 log_info "installing vscode extensions ..."
