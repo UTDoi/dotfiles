@@ -23,7 +23,19 @@
         "after": ["<Esc>"]
     }
   ],
+  "vim.normalModeKeyBindings": [
+    {
+      "before": ["<ctrl+h>"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<ctrl+l>"],
+      "after": ["$"]
+    }
+  ],
   "vim.hlsearch": true,
+  "vim.visualstar": true,
+  "vim.useCtrlKeys": true,
   "window.zoomLevel": 1,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
