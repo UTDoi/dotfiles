@@ -33,6 +33,16 @@
       "after": ["$"]
     }
   ],
+  "vim.visualModeKeyBindings": [
+    {
+      "before": ["<ctrl+h>"],
+      "after": ["^"]
+    },
+    {
+      "before": ["<ctrl+l>"],
+      "after": ["$"]
+    }
+  ],
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.useCtrlKeys": true,
