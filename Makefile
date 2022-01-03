@@ -24,4 +24,4 @@ compile:
 dump:
 	rm -f Brewfile
 	brew bundle dump
-	code --list-extensions > $(VSCODE_DOT_DIR)/extensions
+	code --list-extensions > vscode/extensions
