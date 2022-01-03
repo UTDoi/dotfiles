@@ -10,12 +10,17 @@ GH_CONFIG_BASE_DIR := $(HOME)/.config/gh
 KARABINER_CONFIG_FILE := karabiner.json
 KARABINER_CONFIG_DOT_DIR := karabiner
 KARABINER_CONFIG_BASE_DIR := $(HOME)/.config/karabiner
+NVIM_CONFIG_FILE := init.vim
+NVIM_CONFIG_DOT_DIR := nvim
+NVIM_CONFIG_BASE_DIR := $(HOME)/.config/nvim
+
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	@$(foreach val, $(VSCODE_SETTING_FILES), ln -sfnv $(abspath $(VSCODE_DOT_DIR)/$(val)) $(VSCODE_SETTING_DIR)/$(val);)
 	@ln -sfnv $(abspath $(GH_CONFIG_DOT_DIR)/$(GH_CONFIG_FILE)) $(GH_CONFIG_BASE_DIR)/$(GH_CONFIG_FILE);
 	@ln -sfnv $(abspath $(KARABINER_CONFIG_DOT_DIR)/$(KARABINER_CONFIG_FILE)) $(KARABINER_CONFIG_BASE_DIR)/$(KARABINER_CONFIG_FILE);
+	@ln -sfnv $(abspath $(NVIM_CONFIG_DOT_DIR)/$(NVIM_CONFIG_FILE)) $(NVIM_CONFIG_BASE_DIR)/$(NVIM_CONFIG_FILE);
 
 install:
 	./macos.sh
