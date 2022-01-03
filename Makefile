@@ -1,26 +1,18 @@
 DOTFILES_EXCLUDES  := .DS_Store .git
 DOTFILES_TARGET    := $(wildcard .??*)
 DOTFILES_FILES     := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
-VSCODE_DOT_DIR := vscode
 VSCODE_SETTING_FILES := settings.json keybindings.json
 VSCODE_SETTING_DIR := $(HOME)/Library/Application\ Support/Code/User
-GH_CONFIG_FILE := config.yml
-GH_CONFIG_DOT_DIR := gh
-GH_CONFIG_BASE_DIR := $(HOME)/.config/gh
-KARABINER_CONFIG_FILE := karabiner.json
-KARABINER_CONFIG_DOT_DIR := karabiner
-KARABINER_CONFIG_BASE_DIR := $(HOME)/.config/karabiner
-NVIM_CONFIG_FILE := init.vim
-NVIM_CONFIG_DOT_DIR := nvim
-NVIM_CONFIG_BASE_DIR := $(HOME)/.config/nvim
+GH_CONFIG_FILE_PATH := gh/config.yml
+KARABINER_CONFIG_FILE_PATH := karabiner/karabiner.json
+NVIM_CONFIG_FILE_PATH := nvim/init.vim
+XDG_CONFIG_FILE_PATHS := $(GH_CONFIG_FILE_PATH) $(KARABINER_CONFIG_FILE_PATH) $(NVIM_CONFIG_FILE_PATH)
 
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
-	@$(foreach val, $(VSCODE_SETTING_FILES), ln -sfnv $(abspath $(VSCODE_DOT_DIR)/$(val)) $(VSCODE_SETTING_DIR)/$(val);)
-	@ln -sfnv $(abspath $(GH_CONFIG_DOT_DIR)/$(GH_CONFIG_FILE)) $(GH_CONFIG_BASE_DIR)/$(GH_CONFIG_FILE);
-	@ln -sfnv $(abspath $(KARABINER_CONFIG_DOT_DIR)/$(KARABINER_CONFIG_FILE)) $(KARABINER_CONFIG_BASE_DIR)/$(KARABINER_CONFIG_FILE);
-	@ln -sfnv $(abspath $(NVIM_CONFIG_DOT_DIR)/$(NVIM_CONFIG_FILE)) $(NVIM_CONFIG_BASE_DIR)/$(NVIM_CONFIG_FILE);
+	@$(foreach val, $(VSCODE_SETTING_FILES), ln -sfnv $(abspath vscode/$(val)) $(VSCODE_SETTING_DIR)/$(val);)
+	@$(foreach val, $(XDG_CONFIG_FILE_PATHS), ln -sfnv $(abspath $(XDG_CONFIG_HOME)/$(val)) $(val);)
 
 install:
 	./macos.sh

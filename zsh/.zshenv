@@ -35,6 +35,7 @@
 }
 
 : 'others' && {
+  export XDG_CONFIG_HOME=$HOME/.config
   export WORDCHARS='*?_-.[]~=&;!#$%^(){}<>'
   export LISTMAX=0
   export SKIP_SEED=1
