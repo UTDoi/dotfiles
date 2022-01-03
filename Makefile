@@ -3,16 +3,12 @@ DOTFILES_TARGET    := $(wildcard .??*)
 DOTFILES_FILES     := $(filter-out $(DOTFILES_EXCLUDES), $(DOTFILES_TARGET))
 VSCODE_SETTING_FILES := settings.json keybindings.json
 VSCODE_SETTING_DIR := $(HOME)/Library/Application\ Support/Code/User
-GH_CONFIG_FILE_PATH := gh/config.yml
-KARABINER_CONFIG_FILE_PATH := karabiner/karabiner.json
-NVIM_CONFIG_FILE_PATH := nvim/init.vim
-XDG_CONFIG_FILE_PATHS := $(GH_CONFIG_FILE_PATH) $(KARABINER_CONFIG_FILE_PATH) $(NVIM_CONFIG_FILE_PATH)
-
+XDG_BDS_APP_CONFIG_HOMES := gh karabiner nvim
 
 deploy:
 	@$(foreach val, $(DOTFILES_FILES), ln -sfnv $(abspath $(val)) $(HOME)/$(val);)
 	@$(foreach val, $(VSCODE_SETTING_FILES), ln -sfnv $(abspath vscode/$(val)) $(VSCODE_SETTING_DIR)/$(val);)
-	@$(foreach val, $(XDG_CONFIG_FILE_PATHS), ln -sfnv $(abspath $(XDG_CONFIG_HOME)/$(val)) $(val);)
+	@$(foreach val, $(XDG_BDS_APP_CONFIG_HOMES), rm -rf $(XDG_CONFIG_HOME)/$(val); ln -sv $(abspath $(val)) $(XDG_CONFIG_HOME)/$(val);)
 
 install:
 	./macos.sh
