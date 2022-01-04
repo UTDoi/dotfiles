@@ -35,12 +35,12 @@ brew "libmagic"
 brew "luv"
 brew "md5sha1sum", link: false
 brew "protobuf"
-brew "mysql",
+brew "mysql", restart_service: true
 brew "mysql-client"
-brew "mysql@5.7",
+brew "mysql@5.7"
 brew "neovim"
 brew "nghttp2"
-brew "postgresql",
+brew "postgresql", restart_service: true
 brew "pstree"
 brew "tcl-tk"
 brew "python@3.8"
