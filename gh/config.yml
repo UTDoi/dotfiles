@@ -1,5 +1,5 @@
 git_protocol: https
-editor: !!null vim
+editor: !!null nvim
 prompt: enabled
 pager:
 aliases:
