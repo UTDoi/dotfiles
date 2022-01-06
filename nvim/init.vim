@@ -28,4 +28,26 @@ endif
 filetype plugin indent on
 syntax enable
 
+" set options
+set number
+set autochdir
+set encoding=utf-8
+set fileencodings=utf-8,cp932
+set clipboard+=unnamed,unnamedplus
+set noswapfile
+set autoread
+set hidden
+set cursorline
+set smartindent
+set visualbell
+set virtualedit=onemore
+set showmatch
+set laststatus=2
+set expandtab
+set tabstop=2
+set shiftwidth=2
+
 inoremap <silent> jj <Esc>
+nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+colorscheme iceberg
