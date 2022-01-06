@@ -34,7 +34,7 @@ brew "libevent"
 brew "libmagic"
 brew "luv"
 brew "md5sha1sum", link: false
-brew "mysql-client"
+brew "mysql-client@5.7"
 brew "mysql@5.7"
 brew "neovim"
 brew "nghttp2"
