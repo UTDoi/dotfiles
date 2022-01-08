@@ -47,8 +47,16 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 set noshowmode
+set nobackup
+set nowritebackup
+set completeopt=menuone,noinsert
+set signcolumn=yes
 
 inoremap <silent> jj <Esc>
+inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
+inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
+inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
+
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
 nmap wj <C-w>j
 nmap wk <C-w>k
