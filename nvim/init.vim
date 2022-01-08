@@ -1,3 +1,5 @@
+let g:loaded_netrwPlugin        = 1
+let g:loaded_matchparen         = 1
 let s:dein_dir = expand($XDG_CACHE_HOME.'/dein')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
@@ -43,6 +45,7 @@ set visualbell
 set virtualedit=onemore
 set showmatch
 set laststatus=2
+set showtabline=2
 set expandtab
 set tabstop=2
 set shiftwidth=2
@@ -51,6 +54,16 @@ set nobackup
 set nowritebackup
 set completeopt=menuone,noinsert
 set signcolumn=yes
+set updatetime=250
+set title
+set belloff=all
+set inccommand=split
+set lazyredraw
+set nowrap
+set wildmenu
+set wildmode=list:longest,full
+set mouse=a
+set scrolloff=100
 
 inoremap <silent> jj <Esc>
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
