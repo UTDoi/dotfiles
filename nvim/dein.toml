@@ -37,11 +37,13 @@ hook_add = '''
 
 [[plugins]]
 repo = 'itchyny/lightline.vim'
+depends_on = ['coc.nvim']
 hook_add = '''
 let g:lightline = {
 \ 'colorscheme': 'iceberg',
 \ 'active': {
 \   'left': [
+\     [ 'coc'],
 \     [ 'mode', 'paste' ],
 \     ['readonly', 'filename', 'modified']
 \    ],
@@ -49,6 +51,15 @@ let g:lightline = {
 \     [ 'lineinfo' ],
 \     [ 'fileformat', 'fileencoding', 'filetype' ]
 \    ]
+\ },
+\ 'component_fuction': {
+\   'coc': 'coc#status'
 \ }
 \ }
 '''
+
+[[plugins]]
+repo = "neoclide/coc.nvim"
+merged = 0
+rev = "release"
+
