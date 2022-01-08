@@ -50,6 +50,11 @@ set noshowmode
 
 inoremap <silent> jj <Esc>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
+nmap wj <C-w>j
+nmap wk <C-w>k
+nmap wh <C-w>h
+nmap wl <C-w>l
+
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 
 colorscheme iceberg
