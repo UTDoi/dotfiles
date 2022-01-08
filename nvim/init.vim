@@ -46,6 +46,7 @@ set laststatus=2
 set expandtab
 set tabstop=2
 set shiftwidth=2
+set noshowmode
 
 inoremap <silent> jj <Esc>
 nmap <Esc><Esc> :nohlsearch<CR><Esc>

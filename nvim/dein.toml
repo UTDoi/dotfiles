@@ -25,3 +25,21 @@ hook_add = '''
     autocmd FileType nerdtree,startify call glyph_palette#apply()
   augroup END
 '''
+
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+\ 'colorscheme': 'iceberg',
+\ 'active': {
+\   'left': [
+\     [ 'mode', 'paste' ],
+\     ['readonly', 'filename', 'modified']
+\    ],
+\   'right': [
+\     [ 'lineinfo' ],
+\     [ 'fileformat', 'fileencoding', 'filetype' ]
+\    ]
+\ }
+\ }
+'''
