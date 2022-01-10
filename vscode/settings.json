@@ -14,7 +14,12 @@
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "diffEditor.ignoreTrimWhitespace": true,
   "ruby.intellisense": "rubyLocate",
-  "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/usr/local/bin/zsh",
+    }
+  },
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "files.insertFinalNewline": true,
   "vim.useSystemClipboard": true,
   "vim.insertModeKeyBindings": [
