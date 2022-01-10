@@ -68,6 +68,7 @@ set mouse=a
 set scrolloff=100
 
 inoremap <silent> jj <Esc>
+inoremap <silent> っｊ <ESC>
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
