@@ -148,6 +148,31 @@
                         ]
                     },
                     {
+                        "description": "delete word like vim insert mode",
+                        "manipulators": [
+                          {
+                            "from": {
+                              "key_code": "w",
+                              "modifiers": {
+                                "mandatory": [
+                                  "control"
+                                ],
+                                "optional": [
+                                  "any"
+                                ]
+                              }
+                            },
+                            "to": [
+                              {
+                                "key_code": "delete_or_backspace",
+                                "modifiers": [ "option" ]
+                              }
+                            ],
+                            "type": "basic"
+                          }
+                        ]
+                    },
+                    {
                         "description": "option + vim motions",
                         "manipulators": [
                             {
