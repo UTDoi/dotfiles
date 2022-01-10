@@ -28,6 +28,12 @@
         "after": ["<Esc>"]
     }
   ],
+  "vim.insertModeKeyBindings": [
+    {
+        "before": ["っ", "ｊ"],
+        "after": ["<Esc>"]
+    }
+  ],
   "vim.normalModeKeyBindings": [
     {
       "before": ["<ctrl+h>"],
