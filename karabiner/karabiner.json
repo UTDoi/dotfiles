@@ -150,26 +150,36 @@
                     {
                         "description": "delete word like vim insert mode",
                         "manipulators": [
-                          {
-                            "from": {
-                              "key_code": "w",
-                              "modifiers": {
-                                "mandatory": [
-                                  "control"
+                            {
+                                "conditions": [
+                                    {
+                                        "bundle_identifiers": [
+                                            "^com\\.google\\.Chrome$"
+                                        ],
+                                        "type": "frontmost_application_if"
+                                    }
                                 ],
-                                "optional": [
-                                  "any"
-                                ]
-                              }
-                            },
-                            "to": [
-                              {
-                                "key_code": "delete_or_backspace",
-                                "modifiers": [ "option" ]
-                              }
-                            ],
-                            "type": "basic"
-                          }
+                                "from": {
+                                    "key_code": "w",
+                                    "modifiers": {
+                                        "mandatory": [
+                                            "control"
+                                        ],
+                                        "optional": [
+                                            "any"
+                                        ]
+                                    }
+                                },
+                                "to": [
+                                    {
+                                        "key_code": "delete_or_backspace",
+                                        "modifiers": [
+                                            "option"
+                                        ]
+                                    }
+                                ],
+                                "type": "basic"
+                            }
                         ]
                     },
                     {
@@ -265,8 +275,10 @@
                                 },
                                 "to": [
                                     {
-                                      "key_code": "right_arrow",
-                                      "modifiers": [ "option" ]
+                                        "key_code": "right_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -285,8 +297,10 @@
                                 },
                                 "to": [
                                     {
-                                      "key_code": "left_arrow",
-                                      "modifiers": [ "option" ]
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
@@ -305,8 +319,10 @@
                                 },
                                 "to": [
                                     {
-                                      "key_code": "left_arrow",
-                                      "modifiers": [ "option" ]
+                                        "key_code": "left_arrow",
+                                        "modifiers": [
+                                            "option"
+                                        ]
                                     }
                                 ],
                                 "type": "basic"
