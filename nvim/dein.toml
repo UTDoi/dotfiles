@@ -65,3 +65,13 @@ rev = "release"
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+[[plugins]]
+repo = 'nvim-lua/plenary.nvim'
+
+[[plugins]]
+repo = 'nvim-telescope/telescope.nvim'
+depends_on = ['plenary.nvim']
+
+[[plugins]]
+repo = 'kyazdani42/nvim-web-devicons'
