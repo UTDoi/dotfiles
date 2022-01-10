@@ -1,3 +1,5 @@
+let g:mapleader = "\<Space>"
+
 let g:loaded_netrwPlugin        = 1
 let g:loaded_matchparen         = 1
 let s:dein_dir = expand($XDG_CACHE_HOME.'/dein')
@@ -64,8 +66,6 @@ set wildmenu
 set wildmode=list:longest,full
 set mouse=a
 set scrolloff=100
-
-let g:mapleader = "\<Space>"
 
 inoremap <silent> jj <Esc>
 inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
