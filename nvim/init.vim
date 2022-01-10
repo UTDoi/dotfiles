@@ -73,11 +73,19 @@ inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
 nmap <Esc><Esc> :nohlsearch<CR><Esc>
-nmap wj <C-w>j
-nmap wk <C-w>k
-nmap wh <C-w>h
-nmap wl <C-w>l
+
+nnoremap sp :sp<CR>
+nnoremap sv :vs<CR>
+nnoremap sj <C-w>j
+nnoremap sk <C-w>k
+nnoremap sl <C-w>l
+nnoremap sh <C-w>h
+nnoremap s> <C-w>>
+nnoremap s< <C-w><
+nnoremap s+ <C-w>+
+nnoremap s- <C-w>-
 
 nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
+nnoremap Y y$
 
 colorscheme iceberg
