@@ -75,3 +75,6 @@ depends_on = ['plenary.nvim']
 
 [[plugins]]
 repo = 'kyazdani42/nvim-web-devicons'
+
+[[plugins]]
+repo = 'jiangmiao/auto-pairs'
