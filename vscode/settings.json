@@ -26,9 +26,7 @@
     {
         "before": ["j", "j"],
         "after": ["<Esc>"]
-    }
-  ],
-  "vim.insertModeKeyBindings": [
+    },
     {
         "before": ["っ", "ｊ"],
         "after": ["<Esc>"]
