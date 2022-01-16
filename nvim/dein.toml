@@ -89,3 +89,6 @@ repo = 'jiangmiao/auto-pairs'
 
 [[plugins]]
 repo = 'tpope/vim-surround'
+
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
