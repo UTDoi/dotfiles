@@ -86,3 +86,6 @@ repo = 'kyazdani42/nvim-web-devicons'
 
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+
+[[plugins]]
+repo = 'tpope/vim-surround'
