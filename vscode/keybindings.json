@@ -12,13 +12,5 @@
     "key": "ctrl+space",
     "command": "-editor.action.triggerSuggest",
     "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
-  },
-  {
-    "key": "ctrl+cmd+h",
-    "command": "workbench.action.previousEditor"
-  },
-  {
-    "key": "ctrl+cmd+l",
-    "command": "workbench.action.nextEditor"
   }
 ]
