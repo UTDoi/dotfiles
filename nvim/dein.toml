@@ -92,3 +92,6 @@ repo = 'tpope/vim-surround'
 
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
+
+[[plugins]]
+repo = 'bronson/vim-trailing-whitespace'
