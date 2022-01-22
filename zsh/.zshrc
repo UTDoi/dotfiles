@@ -120,7 +120,6 @@ fi
 
 : 'aliases' && {
   alias home='cd ~'
-  alias gcinolint='SKIP_ESLINT=1 git ci'
   alias gip='git push origin HEAD'
   alias gipf='git push -f origin HEAD'
   alias login='exec $SHELL -l'
