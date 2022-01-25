@@ -75,8 +75,7 @@ inoremap <expr><CR>  pumvisible() ? "<C-y>" : "<CR>"
 inoremap <expr><C-n> pumvisible() ? "<Down>" : "<C-n>"
 inoremap <expr><C-p> pumvisible() ? "<Up>" : "<C-p>"
 
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
-
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
 nnoremap sp :sp<CR>
 nnoremap sv :vs<CR>
 nnoremap sj <C-w>j
