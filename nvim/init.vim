@@ -66,6 +66,8 @@ set wildmenu
 set wildmode=list:longest,full
 set mouse=a
 set scrolloff=100
+set ignorecase
+set smartcase
 
 inoremap <silent> jj <Esc>
 inoremap <silent> っｊ <ESC>
