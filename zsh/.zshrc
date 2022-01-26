@@ -124,6 +124,7 @@ fi
   alias gipf='git push -f origin HEAD'
   alias login='exec $SHELL -l'
   alias j='z'
+  alias vi='nvim'
   alias vim='nvim'
   alias pr='gh pr list --assignee UTDoi | fzf | cut -f1 | xargs -I {} gh pr checkout {}'
   alias gimtag='aws ecr describe-images --repository-name cfoalpha-app --image-ids imageTag=latest | jq -r ".imageDetails[].imageTags"'
