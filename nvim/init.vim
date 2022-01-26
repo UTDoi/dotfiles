@@ -87,7 +87,6 @@ nnoremap s< <C-w><
 nnoremap s+ <C-w>+
 nnoremap s- <C-w>-
 
-nnoremap <C-n> :Fern . -reveal=% -drawer -toggle -width=40<CR>
 nnoremap Y y$
 
 colorscheme iceberg

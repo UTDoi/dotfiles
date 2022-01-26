@@ -7,7 +7,7 @@ repo = 'cocopon/iceberg.vim'
 [[plugins]]
 repo = 'lambdalisue/fern.vim'
 hook_add = '''
-  let g:fern#default_hidden=1
+source $XDG_CONFIG_HOME/nvim/plugins/fern.vim
 '''
 
 [[plugins]]
