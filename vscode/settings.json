@@ -16,7 +16,7 @@
   "ruby.intellisense": "rubyLocate",
   "terminal.integrated.profiles.osx": {
     "zsh": {
-      "path": "/usr/local/bin/zsh",
+      "path": "/usr/local/bin/zsh"
     }
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
