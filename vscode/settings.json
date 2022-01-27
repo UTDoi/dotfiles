@@ -48,6 +48,11 @@
     {
       "before": ["s", "l"],
       "after": ["<ctrl+w>", "l"]
+    },
+
+    {
+      "before": ["Y"],
+      "after": ["y", "$"]
     }
   ],
   "vim.visualModeKeyBindings": [
