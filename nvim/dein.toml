@@ -95,3 +95,6 @@ repo = 'machakann/vim-highlightedyank'
 
 [[plugins]]
 repo = 'bronson/vim-trailing-whitespace'
+
+[[plugins]]
+repo = 'itchyny/vim-parenmatch'
