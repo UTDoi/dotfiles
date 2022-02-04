@@ -34,7 +34,6 @@ syntax enable
 
 " set options
 set number
-set autochdir
 set encoding=utf-8
 set fileencodings=utf-8,cp932
 set clipboard+=unnamed,unnamedplus
