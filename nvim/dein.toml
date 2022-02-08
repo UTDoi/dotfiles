@@ -98,3 +98,7 @@ repo = 'bronson/vim-trailing-whitespace'
 
 [[plugins]]
 repo = 'itchyny/vim-parenmatch'
+
+[[plugins]]
+repo = 'simeji/winresizer'
+
