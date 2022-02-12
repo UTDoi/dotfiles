@@ -80,6 +80,9 @@ nnoremap sj <C-w>j
 nnoremap sk <C-w>k
 nnoremap sl <C-w>l
 nnoremap sh <C-w>h
+nnoremap <silent> <Leader>bp :bprev<CR>
+nnoremap <silent> <Leader>bn :bnext<CR>
+nnoremap <silent> <Leader>bb :b#<CR>
 
 nnoremap Y y$
 
