@@ -85,7 +85,9 @@ nnoremap sh <C-w>h
 nnoremap <silent> <Leader>bp :bprev<CR>
 nnoremap <silent> <Leader>bn :bnext<CR>
 nnoremap <silent> <Leader>bb :b#<CR>
-
 nnoremap Y y$
+
+vnoremap j gj
+vnoremap k gk
 
 colorscheme iceberg
