@@ -3,6 +3,6 @@ editor: !!null nvim
 prompt: enabled
 pager:
 aliases:
-  pc: pr checkout
-  ps: pr status
-  pv: pr view --web
+    pc: pr checkout
+    ps: pr status
+    pv: pr view --web
