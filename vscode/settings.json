@@ -87,5 +87,6 @@
   "window.zoomLevel": 1,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
-  "editor.formatOnType": false
+  "editor.formatOnType": false,
+  "bracket-pair-colorizer-2.depreciation-notice": false
 }
