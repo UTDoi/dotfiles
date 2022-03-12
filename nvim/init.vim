@@ -66,6 +66,8 @@ set mouse=a
 set scrolloff=100
 set ignorecase
 set smartcase
+set foldmethod=syntax
+set foldlevel=1000
 
 inoremap <silent> jj <Esc>
 inoremap <silent> っｊ <ESC>
