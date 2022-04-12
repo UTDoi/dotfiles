@@ -58,7 +58,14 @@
       "before": ["s", "l"],
       "after": ["<ctrl+w>", "l"]
     },
-
+    {
+      "before": ["s", "v"],
+      "after": ["<ctrl+w>", "v"]
+    },
+    {
+      "before": ["s", "p"],
+      "after": ["<ctrl+w>", "p"]
+    },
     {
       "before": ["Y"],
       "after": ["y", "$"]
