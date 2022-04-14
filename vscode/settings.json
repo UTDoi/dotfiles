@@ -8,6 +8,8 @@
   "editor.lineHeight": 22,
   "editor.fontSize": 13,
   "editor.fontFamily": "HackGenNerd",
+  "editor.guides.bracketPairs": true,
+  "editor.bracketPairColorization.enabled": true,
   "workbench.colorTheme": "Iceberg",
   "workbench.iconTheme": "vscode-icons",
   "workbench.editor.enablePreview": false,
