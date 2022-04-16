@@ -100,6 +100,5 @@
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
   "editor.quickSuggestionsDelay": 1000,
-  "indentRainbow.updateDelay": 800,
-  "bracket-pair-colorizer-2.depreciation-notice": false
+  "indentRainbow.updateDelay": 800
 }
