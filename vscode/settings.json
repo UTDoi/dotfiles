@@ -24,15 +24,15 @@
   "terminal.integrated.defaultProfile.osx": "zsh",
   "files.insertFinalNewline": true,
   "vim.useSystemClipboard": true,
-  "vim.highlightedyank.enable"   : true,
+  "vim.highlightedyank.enable": true,
   "vim.insertModeKeyBindings": [
     {
-        "before": ["j", "j"],
-        "after": ["<Esc>"]
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
     },
     {
-        "before": ["っ", "ｊ"],
-        "after": ["<Esc>"]
+      "before": ["っ", "ｊ"],
+      "after": ["<Esc>"]
     }
   ],
   "vim.normalModeKeyBindings": [
@@ -94,9 +94,12 @@
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.useCtrlKeys": true,
+  "vim.statusBarColorControl": false,
   "window.zoomLevel": 1,
   "editor.formatOnPaste": false,
   "editor.formatOnSave": false,
   "editor.formatOnType": false,
+  "editor.quickSuggestionsDelay": 1000,
+  "indentRainbow.updateDelay": 800,
   "bracket-pair-colorizer-2.depreciation-notice": false
 }
