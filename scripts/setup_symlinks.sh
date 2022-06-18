@@ -34,7 +34,7 @@ TARGET_VSCODE_SETTING_FILES=(
   keybindings.json
 )
 
-VSCODE_SETTING_DIR="$HOME/Library/Application\ Support/Code/User"
+VSCODE_SETTING_DIR="$HOME/Library/Application Support/Code/User"
 
 get_file_path_in_dotfiles_dir() {
   find $DOTFILES_DIR -type f -name "$1" -maxdepth 1
@@ -74,7 +74,7 @@ link_to_vscode_setting_dir() {
   for TARGET_VSCODE_SETTING_FILE in ${TARGET_VSCODE_SETTING_FILES[@]}; do
     TARGET_PATH=`get_file_path_in_dotfiles_dir $TARGET_VSCODE_SETTING_FILE`
     log_info "Put "$VSCODE_SETTING_DIR/$TARGET_VSCODE_SETTING_FILE" symbolic link ..."
-    ln -snf $TARGET_PATH $VSCODE_SETTING_DIR
+    ln -snf $TARGET_PATH "$VSCODE_SETTING_DIR"
   done
 }
 
