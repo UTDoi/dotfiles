@@ -37,7 +37,7 @@ TARGET_VSCODE_SETTING_FILES=(
 VSCODE_SETTING_DIR=$(HOME)/Library/Application\ Support/Code/User
 
 get_file_path_in_dotfiles_dir() {
-  find $DOTFILES_DIR -type f -name "$1"
+  find $DOTFILES_DIR -type f -name "$1" -maxdepth 1
 }
 
 get_dir_path_in_dotfiles_dir() {
