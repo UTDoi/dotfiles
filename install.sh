@@ -12,7 +12,7 @@ download_dotfiles() {
   if [ ! -d $DOTFILES_DIR ]; then
     echo $(tput setaf 2)Downloading dotfiles...$(tput sgr0)
 
-    mkdir $DOTFILES_DIR
+    mkdir -p $DOTFILES_DIR
 
     if is_exists "git"; then
       git clone ${DOT_REMOTE_URL} ${DOTFILES_DIR} && true
