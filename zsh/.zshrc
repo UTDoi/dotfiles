@@ -250,7 +250,13 @@ fi
 
 : 'initialize completion' && {
   : 'for gh completion' && {
-    GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
+    # for M1
+    if [[ "$(arch)" == "arm64" ]]; then
+      GH_COMPLETION_PATH=/opt/homebrew/share/zsh/site-functions/_gh
+    else
+      GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
+    fi
+
     if [ ! -f $GH_COMPLETION_PATH ]; then
       touch $GH_COMPLETION_PATH
       gh completion -s zsh > $GH_COMPLETION_PATH
