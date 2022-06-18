@@ -253,6 +253,8 @@ fi
     # for M1
     if [[ "$(arch)" == "arm64" ]]; then
       GH_COMPLETION_PATH=/opt/homebrew/share/zsh/site-functions/_gh
+    elif [[ "$(uname -s)" == 'Linux' ]]; then
+      GH_COMPLETION_PATH=/home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh
     else
       GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
     fi
