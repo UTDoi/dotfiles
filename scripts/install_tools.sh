@@ -9,6 +9,11 @@ source $DOTFILES_DIR/scripts/setup_mac_os_config.sh
 if !(is_exists "brew"); then
   log_info "installing Homebrew ..."
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+  # for M1
+  if [[ "$(arch)" == "arm64" ]]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+  fi
 fi
 
 log_info "installing brew packages ..."
