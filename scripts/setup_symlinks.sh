@@ -40,6 +40,10 @@ get_file_path_in_dotfiles_dir() {
   find $DOTFILES_DIR -type f -name "$1" -maxdepth 1
 }
 
+get_file_path_in_vscode_dir() {
+  find $DOTFILES_DIR/vscode -type f -name "$1" -maxdepth 1
+}
+
 get_dir_path_in_dotfiles_dir() {
   find $DOTFILES_DIR -type d -name "$1"
 }
@@ -47,14 +51,12 @@ get_dir_path_in_dotfiles_dir() {
 link_to_home() {
   for TARGET_DOTFILE in ${TARGET_DOTFILES[@]}; do
     TARGET_PATH=`get_file_path_in_dotfiles_dir $TARGET_DOTFILE`
-    log_info "Put "~/$TARGET_DOTFILE" symbolic link ..."
-    ln -snf $TARGET_PATH $HOME
+    ln -snfv $TARGET_PATH $HOME
   done
 
   for TARGET_DOTDIR in ${TARGET_DOTDIRS[@]}; do
     TARGET_PATH=`get_dir_path_in_dotfiles_dir $TARGET_DOTDIR`
-    log_info "Put "~/$TARGET_DOTDIR" symbolic link ..."
-    ln -snf $TARGET_PATH $HOME
+    ln -snfv $TARGET_PATH $HOME
   done
 }
 
@@ -65,16 +67,14 @@ link_to_config_dir() {
 
   for TARGET_CONFIG_DIR in ${TARGET_CONFIG_DIRS[@]}; do
     TARGET_PATH=`get_dir_path_in_dotfiles_dir $TARGET_CONFIG_DIR`
-    log_info "Put "~/.config/$TARGET_CONFIG_DIR" symbolic link ..."
-    ln -snf $TARGET_PATH $HOME/.config
+    ln -snfv $TARGET_PATH $HOME/.config
   done
 }
 
 link_to_vscode_setting_dir() {
   for TARGET_VSCODE_SETTING_FILE in ${TARGET_VSCODE_SETTING_FILES[@]}; do
-    TARGET_PATH=`get_file_path_in_dotfiles_dir $TARGET_VSCODE_SETTING_FILE`
-    log_info "Put "$VSCODE_SETTING_DIR/$TARGET_VSCODE_SETTING_FILE" symbolic link ..."
-    ln -snf $TARGET_PATH "$VSCODE_SETTING_DIR"
+    TARGET_PATH=`get_file_path_in_vscode_dir $TARGET_VSCODE_SETTING_FILE`
+    ln -snfv $TARGET_PATH "$VSCODE_SETTING_DIR"
   done
 }
 
