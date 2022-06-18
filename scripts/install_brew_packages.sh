@@ -113,6 +113,9 @@ install_brew_packages() {
         log_info "$target has been already installed."
       fi
     done
+
+    brew tap homebrew/cask-fonts
+    brew install font-hackgen-nerd
   fi
 }
 
