@@ -59,6 +59,10 @@ link_to_home() {
 }
 
 link_to_config_dir() {
+  if [ ! -d ~/.config ]; then
+    mkdir ~/.config
+  fi
+
   for TARGET_CONFIG_DIR in ${TARGET_CONFIG_DIRS[@]}; do
     TARGET_PATH=`get_dir_path_in_dotfiles_dir $TARGET_CONFIG_DIR`
     log_info "Put "~/.config/$TARGET_CONFIG_DIR" symbolic link ..."
