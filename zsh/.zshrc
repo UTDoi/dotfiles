@@ -77,6 +77,10 @@ fi
   # for mysql 5.7 PJ
   export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
   export PATH=/home/linuxbrew/.linuxbrew/opt/mysql-client@5.7/bin:$PATH
+
+  if is_linux; then
+    export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/opt/libffi/lib
+  fi
 }
 
 : 'configuration for common' && {
