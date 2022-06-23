@@ -76,6 +76,7 @@ fi
   export PATH=$PATH:$DOTPATH/bin
   # for mysql 5.7 PJ
   export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
+  export PATH=/home/linuxbrew/.linuxbrew/opt/mysql-client@5.7/bin:$PATH
 }
 
 : 'configuration for common' && {
