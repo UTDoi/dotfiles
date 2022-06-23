@@ -1,3 +1,16 @@
+is_darwin() {
+  [ "$(uname -s)" == 'Darwin' ] > /dev/null 2>&1
+}
+
+is_linux() {
+  [ "$(uname -s)" == 'Linux' ] > /dev/null 2>&1
+}
+
+is_exists() {
+  type "$1" >/dev/null 2>&1
+  return $?
+}
+
 if [[ ! -n $TMUX ]] && [[ $- == *l* ]] && [[ $TERM_PROGRAM != "vscode" ]]; then
   ID="`tmux list-sessions`"
   if [[ -z "$ID" ]]; then
@@ -21,6 +34,8 @@ fi
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+
 
 : 'fzf setting' && {
   if [ ! -f ~/.fzf.zsh ]; then
@@ -147,6 +162,10 @@ fi
 
   if (($+commands[bat])); then
     alias cat="bat --style header,grid,changes"
+  fi
+
+  if ! is_exists date; then
+    alias date="gdate"
   fi
 
   if (($+commands[kubectl])); then

@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 get_aws_info () {
   case $2 in
@@ -7,7 +7,7 @@ get_aws_info () {
       eval $1'_role_name'=$(echo $3 | awk -F ":" '{print $6}' | awk -F "/" '{print $2}')
       ;;
     'x_security_token_expires')
-      local EXPIRE=$(( $(gdate -d $3 +%s) - $(gdate +%s)))
+      local EXPIRE=$(( $(date -d $3 +%s) - $(date +%s)))
       local H=$(( $EXPIRE % 86400 / 3600 ))
       local M=$(( $EXPIRE % 86400 % 3600 / 60 ))
 
