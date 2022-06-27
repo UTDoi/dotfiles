@@ -169,7 +169,7 @@ fi
     alias cat="bat --style header,grid,changes"
   fi
 
-  if ! is_exists date; then
+  if is_exists gdate; then
     alias date="gdate"
   fi
 

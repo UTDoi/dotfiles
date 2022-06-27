@@ -1,5 +1,10 @@
 #!/bin/bash
 
+is_exists() {
+  type "$1" >/dev/null 2>&1
+  return $?
+}
+
 get_aws_info () {
   case $2 in
     'x_principal_arn')
@@ -7,7 +12,12 @@ get_aws_info () {
       eval $1'_role_name'=$(echo $3 | awk -F ":" '{print $6}' | awk -F "/" '{print $2}')
       ;;
     'x_security_token_expires')
-      local EXPIRE=$(( $(date -d $3 +%s) - $(date +%s)))
+      local EXPIRE
+      if is_exists gdate; then
+        EXPIRE=$(( $(gdate -d $3 +%s) - $(gdate +%s)))
+      else
+        EXPIRE=$(( $(date -d $3 +%s) - $(date +%s)))
+      fi
       local H=$(( $EXPIRE % 86400 / 3600 ))
       local M=$(( $EXPIRE % 86400 % 3600 / 60 ))
 
