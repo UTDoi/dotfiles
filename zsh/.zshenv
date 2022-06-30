@@ -41,3 +41,5 @@
   export LISTMAX=0
   export SKIP_SEED=1
 }
+
+. $HOME/.local_zshenv

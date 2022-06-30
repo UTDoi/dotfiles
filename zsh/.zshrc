@@ -151,6 +151,7 @@ fi
   alias dcns='docker ps | awk '\''{print $2}'\'''
   alias g='git'
 
+
   if (($+commands[exa])); then
     alias ls="exa -F"
     alias ll="exa -hlBFS"
@@ -222,6 +223,24 @@ fi
     zle clear-screen
   }
   zle -N fzf-lsec2
+
+  ec2_up() {
+    aws ec2 start-instances \
+      --instance-ids $MY_DEV_INSTANCE_ID && \
+    aws ec2 wait instance-running \
+      --instance-ids $MY_DEV_INSTANCE_ID && \
+    aws ec2 wait instance-status-ok \
+      --instance-ids $MY_DEV_INSTANCE_ID && \
+    sleep 3m && echo "**Now instance is up**"
+  }
+
+  ec2_down() {
+    aws ec2 stop-instances \
+      --instance-ids $MY_DEV_INSTANCE_ID && \
+    aws ec2 wait instance-stopped \
+      --instance-ids $MY_DEV_INSTANCE_ID && \
+    echo "**Now instance is down**"
+  }
 }
 
 : 'bindkeys' && {
