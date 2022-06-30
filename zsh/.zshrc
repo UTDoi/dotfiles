@@ -228,7 +228,7 @@ fi
     aws ec2 start-instances --instance-ids $MY_DEV_INSTANCE_ID &&
     aws ec2 wait instance-running --instance-ids $MY_DEV_INSTANCE_ID &&
     aws ec2 wait instance-status-ok --instance-ids $MY_DEV_INSTANCE_ID &&
-    sleep 3m &&
+    sleep 180 &&
     echo "**Now instance is up**"
   }
 
