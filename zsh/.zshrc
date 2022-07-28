@@ -150,6 +150,7 @@ fi
   alias gimtag='aws ecr describe-images --repository-name cfoalpha-app --image-ids imageTag=latest | jq -r ".imageDetails[].imageTags"'
   alias dcns='docker ps | awk '\''{print $2}'\'''
   alias g='git'
+  alias rcode='code --remote ssh-remote+yutaro-doi-eng-dev'
 
 
   if (($+commands[exa])); then
