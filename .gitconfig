@@ -18,6 +18,7 @@
   f = fetch
   st = status
   cb = checkout -b
+  showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...develop | grep 'Merge pull request #' | head -n 1;  }; f"
 [init]
   templatedir = ~/.git_template
 [commit]
