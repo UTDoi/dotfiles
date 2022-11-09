@@ -215,15 +215,7 @@ fi
   }
   zle -N fzf-z-search
 
-  fzf-lsec2() {
-    local ip=$(lsec2 -c | fzf-tmux --prompt "[host]: " --query "$LBUFFER" | awk '{print $2}')
-    if [[ "$ip" != "" ]]; then
-      BUFFER="ssh -t -t $ip"
-      zle accept-line
-    fi
-    zle clear-screen
-  }
-  zle -N fzf-lsec2
+  zle -N step
 
   ec2_up() {
     aws ec2 start-instances --instance-ids $MY_DEV_INSTANCE_ID &&
@@ -255,7 +247,7 @@ fi
   bindkey '^g' ghq-fcd
   bindkey '^]' fbr
   bindkey '^z' fzf-z-search
-  bindkey '^s' fzf-lsec2
+  bindkey '^s' step
 }
 
 : 'zinit plugins' && {
