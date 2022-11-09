@@ -95,10 +95,12 @@
   "vim.visualstar": true,
   "vim.useCtrlKeys": true,
   "vim.statusBarColorControl": false,
-  "window.zoomLevel": 1,
-  "editor.formatOnPaste": false,
-  "editor.formatOnSave": false,
-  "editor.formatOnType": false,
+  "editor.formatOnPaste": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
   "editor.quickSuggestionsDelay": 1000,
-  "indentRainbow.updateDelay": 800
+  "indentRainbow.updateDelay": 800,
+  "vsicons.dontShowNewVersionMessage": true,
+  "window.zoomLevel": 1,
+  "terminal.integrated.defaultProfile.linux": "zsh"
 }
