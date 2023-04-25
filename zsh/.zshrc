@@ -35,8 +35,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-
-
 : 'fzf setting' && {
   if [ ! -f ~/.fzf.zsh ]; then
     $(brew --prefix)/opt/fzf/install
@@ -52,24 +50,12 @@ fi
   fi
 }
 
-: 'anyenv setting' && {
-  eval "$(anyenv init -)"
-
-  ANYENV_DEFINITION_ROOT=${HOME}/.config/anyenv/anyenv-install
-  ANYENV_ROOT=$(anyenv root)
-
-  if [ ! -d ${ANYENV_DEFINITION_ROOT} ]; then
-    anyenv install --init
-  fi
-
-  if [[ ! -d ${ANYENV_ROOT}/plugins/anyenv-update ]]; then
-    mkdir -p ${ANYENV_ROOT}/plugins
-    git clone https://github.com/znz/anyenv-update.git ${ANYENV_ROOT}/plugins/anyenv-update
-  fi
-}
-
 : 'direnv setting' && {
   eval "$(direnv hook zsh)"
+}
+
+: 'asdf setting' && {
+  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
 }
 
 : 'paths' && {
@@ -314,3 +300,4 @@ elif [ ! -S "$SSH_AUTH_SOCK" ]; then
 elif [ ! -L "$SSH_AUTH_SOCK" ]; then
     ln -snf "$SSH_AUTH_SOCK" $AUTH_SOCK && export SSH_AUTH_SOCK=$AUTH_SOCK
 fi
+

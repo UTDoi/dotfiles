@@ -5,7 +5,7 @@ source $DOTFILES_DIR/scripts/utils.sh
 
 # CUI tools
 target_brew_list=(
-  anyenv
+  asdf
   awscli
   bat
   glib
