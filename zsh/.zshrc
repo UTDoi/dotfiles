@@ -61,7 +61,8 @@ fi
 
 : 'asdf setting' && {
   if is_darwin; then
-    . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+    # homebrew向けのやつ書く
+    # . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
   else
     export ASDF_DATA_DIR=/opt/asdf-data
     . /opt/asdf/asdf.sh
@@ -73,11 +74,6 @@ fi
   export PATH=$PATH:$DOTPATH/bin
   # for mysql 5.7 PJ
   export PATH=/usr/local/opt/mysql@5.7/bin:$PATH
-  export PATH=/home/linuxbrew/.linuxbrew/opt/mysql-client@5.7/bin:$PATH
-
-  if is_linux; then
-    export LD_LIBRARY_PATH=/home/linuxbrew/.linuxbrew/opt/libffi/lib
-  fi
 }
 
 : 'configuration for common' && {
