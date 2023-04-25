@@ -118,8 +118,3 @@ install_brew_packages() {
     brew install font-hackgen-nerd
   fi
 }
-
-# If you want to run, pass something as an argument
-if [ $# != 0 ]; then
-  install_brew_packages
-fi

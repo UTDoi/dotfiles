@@ -87,8 +87,3 @@ setup_symlinks() {
   fi
   log_pass "Setup symbolic links complete! ✔"
 }
-
-# If you want to run, pass something as an argument
-if [ $# != 0 ]; then
-  setup_symlinks
-fi

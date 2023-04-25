@@ -59,8 +59,3 @@ setup_mac_os_config() {
     killall "$app" &> /dev/null
   done
 }
-
-# If you want to run, pass something as an argument
-if [ $# != 0 ]; then
-  setup_mac_os_config
-fi
