@@ -61,7 +61,11 @@ fi
 
 : 'asdf setting' && {
   if is_darwin; then
-    . /usr/local/opt/asdf/libexec/asdf.sh
+    if [[ "$(arch)" == "arm64" ]]; then
+      . /opt/homebrew/opt/asdf/libexec/asdf.sh
+    else
+      . /usr/local/opt/asdf/libexec/asdf.sh
+    fi
   else
     export ASDF_DATA_DIR=/opt/asdf-data
     . /opt/asdf/asdf.sh
