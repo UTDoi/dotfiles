@@ -13,6 +13,7 @@ TARGET_DOTFILES=(
   .tigrc
   .tmux.conf
   .zshenv
+  .asdfrc
 )
 
 # directories placed at $HOME/
