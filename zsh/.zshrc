@@ -36,14 +36,14 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 : 'fzf setting' && {
-  if [ ! -f ~/.fzf.zsh ]; then
-    if is_darwin; then
+  if is_darwin; then
+    if [ ! -f ~/.fzf.zsh ]; then
       $(brew --prefix)/opt/fzf/install
-      source ~/.fzf.zsh
-    else
-      . /usr/share/doc/fzf/examples/completion.zsh
-      . /usr/share/doc/fzf/examples/key-bindings.zsh
     fi
+    source ~/.fzf.zsh
+  else
+    . /usr/share/doc/fzf/examples/completion.zsh
+    . /usr/share/doc/fzf/examples/key-bindings.zsh
   fi
 }
 
@@ -61,8 +61,7 @@ fi
 
 : 'asdf setting' && {
   if is_darwin; then
-    # homebrew向けのやつ書く
-    # . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+    . /usr/local/opt/asdf/libexec/asdf.sh
   else
     export ASDF_DATA_DIR=/opt/asdf-data
     . /opt/asdf/asdf.sh
