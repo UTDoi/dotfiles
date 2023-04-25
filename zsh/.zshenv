@@ -43,3 +43,4 @@
 }
 
 . $HOME/.local_zshenv
+. "$HOME/.cargo/env"

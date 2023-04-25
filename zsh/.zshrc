@@ -37,9 +37,14 @@ fi
 
 : 'fzf setting' && {
   if [ ! -f ~/.fzf.zsh ]; then
-    $(brew --prefix)/opt/fzf/install
+    if is_darwin; then
+      $(brew --prefix)/opt/fzf/install
+      source ~/.fzf.zsh
+    else
+      . /usr/share/doc/fzf/examples/completion.zsh
+      . /usr/share/doc/fzf/examples/key-bindings.zsh
+    fi
   fi
-  source ~/.fzf.zsh
 }
 
 : 'zinit setting' && {
@@ -55,7 +60,13 @@ fi
 }
 
 : 'asdf setting' && {
-  . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+  if is_darwin; then
+    . /home/linuxbrew/.linuxbrew/opt/asdf/libexec/asdf.sh
+  else
+    export ASDF_DATA_DIR=/opt/asdf-data
+    . /opt/asdf/asdf.sh
+    fpath=(${ASDF_DIR}/completions $fpath)
+  fi
 }
 
 : 'paths' && {
@@ -138,6 +149,10 @@ fi
   alias g='git'
   alias rcode='code --remote ssh-remote+yutaro-doi-eng-dev'
 
+  if is_linux; then
+    alias bat='batcat'
+  fi
+
 
   if (($+commands[exa])); then
     alias ls="exa -F"
@@ -153,8 +168,14 @@ fi
     alias lla="ls -ahlS"
   fi
 
-  if (($+commands[bat])); then
-    alias cat="bat --style header,grid,changes"
+  if is_linux; then
+    if (($+commands[batcat])); then
+      alias cat="batcat --style header,grid,changes"
+    fi
+  else
+    if (($+commands[bat])); then
+      alias cat="bat --style header,grid,changes"
+    fi
   fi
 
   if is_exists gdate; then
@@ -268,19 +289,20 @@ fi
 
 : 'initialize completion' && {
   : 'for gh completion' && {
-    # for M1
-    if [[ "$(arch)" == "arm64" ]]; then
-      GH_COMPLETION_PATH=/opt/homebrew/share/zsh/site-functions/_gh
-    elif [[ "$(uname -s)" == 'Linux' ]]; then
-      GH_COMPLETION_PATH=/home/linuxbrew/.linuxbrew/share/zsh/site-functions/_gh
-    else
-      GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
+    if is_darwin; then
+      # for M1
+      if [[ "$(arch)" == "arm64" ]]; then
+        GH_COMPLETION_PATH=/opt/homebrew/share/zsh/site-functions/_gh
+      else
+        GH_COMPLETION_PATH=/usr/local/share/zsh/site-functions/_gh
+      fi
+
+      if [ ! -f $GH_COMPLETION_PATH ]; then
+        touch $GH_COMPLETION_PATH
+        gh completion -s zsh > $GH_COMPLETION_PATH
+      fi
     fi
 
-    if [ ! -f $GH_COMPLETION_PATH ]; then
-      touch $GH_COMPLETION_PATH
-      gh completion -s zsh > $GH_COMPLETION_PATH
-    fi
   }
 
   autoload -U compinit && compinit
