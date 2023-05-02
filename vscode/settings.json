@@ -27,74 +27,168 @@
   "vim.highlightedyank.enable": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     },
     {
-      "before": ["っ", "ｊ"],
-      "after": ["<Esc>"]
+      "before": [
+        "っ",
+        "ｊ"
+      ],
+      "after": [
+        "<Esc>"
+      ]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": ["j"],
-      "after": ["g", "j"]
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
     {
-      "before": ["k"],
-      "after": ["g", "k"]
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
     },
     {
-      "before": ["<ctrl+h>"],
-      "after": ["^"]
+      "before": [
+        "<ctrl+h>"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["<ctrl+l>"],
-      "after": ["$"]
+      "before": [
+        "<ctrl+l>"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["s", "h"],
-      "after": ["<ctrl+w>", "h"]
+      "before": [
+        "s",
+        "h"
+      ],
+      "after": [
+        "<ctrl+w>",
+        "h"
+      ]
     },
     {
-      "before": ["s", "l"],
-      "after": ["<ctrl+w>", "l"]
+      "before": [
+        "s",
+        "l"
+      ],
+      "after": [
+        "<ctrl+w>",
+        "l"
+      ]
     },
     {
-      "before": ["s", "v"],
-      "after": ["<ctrl+w>", "v"]
+      "before": [
+        "s",
+        "v"
+      ],
+      "after": [
+        "<ctrl+w>",
+        "v"
+      ]
     },
     {
-      "before": ["s", "p"],
-      "after": ["<ctrl+w>", "p"]
+      "before": [
+        "s",
+        "p"
+      ],
+      "after": [
+        "<ctrl+w>",
+        "p"
+      ]
     },
     {
-      "before": ["Y"],
-      "after": ["y", "$"]
+      "before": [
+        "Y"
+      ],
+      "after": [
+        "y",
+        "$"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": ["<ctrl+h>"],
-      "after": ["^"]
+      "before": [
+        "<ctrl+h>"
+      ],
+      "after": [
+        "^"
+      ]
     },
     {
-      "before": ["<ctrl+l>"],
-      "after": ["$"]
+      "before": [
+        "<ctrl+l>"
+      ],
+      "after": [
+        "$"
+      ]
     },
     {
-      "before": ["j"],
-      "after": ["g", "j"]
+      "before": [
+        "j"
+      ],
+      "after": [
+        "g",
+        "j"
+      ]
     },
     {
-      "before": ["k"],
-      "after": ["g", "k"]
+      "before": [
+        "k"
+      ],
+      "after": [
+        "g",
+        "k"
+      ]
+    },
+    {
+      "before": [
+        "<C-k>"
+      ],
+      "after": [
+        "g",
+        "b"
+      ]
     }
   ],
   "vim.hlsearch": true,
   "vim.visualstar": true,
   "vim.useCtrlKeys": true,
   "vim.statusBarColorControl": false,
+  "vim.enableNeovim": true,
   "editor.formatOnPaste": true,
   "editor.formatOnSave": true,
   "editor.formatOnType": true,
@@ -102,5 +196,7 @@
   "indentRainbow.updateDelay": 800,
   "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": 1,
-  "terminal.integrated.defaultProfile.linux": "zsh"
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "rubyLsp.formatter": "rubocop",
+  "editor.inlineSuggest.enabled": true,
 }
