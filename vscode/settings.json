@@ -15,7 +15,6 @@
   "workbench.editor.enablePreview": false,
   "workbench.editor.enablePreviewFromQuickOpen": false,
   "diffEditor.ignoreTrimWhitespace": true,
-  "ruby.intellisense": "rubyLocate",
   "terminal.integrated.profiles.osx": {
     "zsh": {
       "path": "/usr/local/bin/zsh"
@@ -27,161 +26,76 @@
   "vim.highlightedyank.enable": true,
   "vim.insertModeKeyBindings": [
     {
-      "before": [
-        "j",
-        "j"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
     },
     {
-      "before": [
-        "っ",
-        "ｊ"
-      ],
-      "after": [
-        "<Esc>"
-      ]
+      "before": ["っ", "ｊ"],
+      "after": ["<Esc>"]
     }
   ],
   "vim.normalModeKeyBindings": [
     {
-      "before": [
-        "j"
-      ],
-      "after": [
-        "g",
-        "j"
-      ]
+      "before": ["j"],
+      "after": ["g", "j"]
     },
     {
-      "before": [
-        "k"
-      ],
-      "after": [
-        "g",
-        "k"
-      ]
+      "before": ["k"],
+      "after": ["g", "k"]
     },
     {
-      "before": [
-        "<ctrl+h>"
-      ],
-      "after": [
-        "^"
-      ]
+      "before": ["<ctrl+h>"],
+      "after": ["^"]
     },
     {
-      "before": [
-        "<ctrl+l>"
-      ],
-      "after": [
-        "$"
-      ]
+      "before": ["<ctrl+l>"],
+      "after": ["$"]
     },
     {
-      "before": [
-        "s",
-        "h"
-      ],
-      "after": [
-        "<ctrl+w>",
-        "h"
-      ]
+      "before": ["s", "h"],
+      "after": ["<ctrl+w>", "h"]
     },
     {
-      "before": [
-        "s",
-        "l"
-      ],
-      "after": [
-        "<ctrl+w>",
-        "l"
-      ]
+      "before": ["s", "l"],
+      "after": ["<ctrl+w>", "l"]
     },
     {
-      "before": [
-        "s",
-        "v"
-      ],
-      "after": [
-        "<ctrl+w>",
-        "v"
-      ]
+      "before": ["s", "v"],
+      "after": ["<ctrl+w>", "v"]
     },
     {
-      "before": [
-        "s",
-        "p"
-      ],
-      "after": [
-        "<ctrl+w>",
-        "p"
-      ]
+      "before": ["s", "p"],
+      "after": ["<ctrl+w>", "p"]
     },
     {
-      "before": [
-        "Y"
-      ],
-      "after": [
-        "y",
-        "$"
-      ]
+      "before": ["Y"],
+      "after": ["y", "$"]
     },
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     }
   ],
   "vim.visualModeKeyBindings": [
     {
-      "before": [
-        "<ctrl+h>"
-      ],
-      "after": [
-        "^"
-      ]
+      "before": ["<ctrl+h>"],
+      "after": ["^"]
     },
     {
-      "before": [
-        "<ctrl+l>"
-      ],
-      "after": [
-        "$"
-      ]
+      "before": ["<ctrl+l>"],
+      "after": ["$"]
     },
     {
-      "before": [
-        "j"
-      ],
-      "after": [
-        "g",
-        "j"
-      ]
+      "before": ["j"],
+      "after": ["g", "j"]
     },
     {
-      "before": [
-        "k"
-      ],
-      "after": [
-        "g",
-        "k"
-      ]
+      "before": ["k"],
+      "after": ["g", "k"]
     },
     {
-      "before": [
-        "<C-k>"
-      ],
-      "after": [
-        "g",
-        "b"
-      ]
+      "before": ["<C-k>"],
+      "after": ["g", "b"]
     }
   ],
   "vim.hlsearch": true,
@@ -197,6 +111,10 @@
   "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": 1,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "rubyLsp.formatter": "rubocop",
+  "rubyLsp.rubyVersionManager": "asdf",
+  "rubyLsp.formatter": "syntax_tree",
   "editor.inlineSuggest.enabled": true,
+  "[ruby]": {
+    "editor.defaultFormatter": "Shopify.ruby-lsp",
+  },
 }
