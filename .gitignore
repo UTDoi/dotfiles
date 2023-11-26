@@ -5,3 +5,4 @@ Brewfile.lock.json
 *.zwc
 .zcompdump
 */.zcompcache/*
+.zsh_sessions
