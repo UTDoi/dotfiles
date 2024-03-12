@@ -313,6 +313,10 @@ fi
     AWS_COMPLETER_PATH=$(which aws_completer)
     complete -C ${AWS_COMPLETER_PATH}
   }
+
+  : 'for kubectl completion' && {
+    source <(kubectl completion zsh)
+  }
 }
 
 AUTH_SOCK="$HOME/.ssh/.ssh-auth-sock"
