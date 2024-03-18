@@ -32,5 +32,9 @@
     "key": "shift+cmd+c",
     "command": "-workbench.action.terminal.openNativeConsole",
     "when": "!terminalFocus"
+  },
+  {
+    "key": "cmd+q",
+    "command": "workbench.action.openQuickChat.copilot"
   }
 ]
