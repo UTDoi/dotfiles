@@ -71,7 +71,6 @@ target_brew_cask_list=(
   clipy
   dbeaver-community
   docker
-  font-hackgen-nerd
   google-chrome
   hammerspoon
   iterm2
