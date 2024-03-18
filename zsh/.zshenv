@@ -30,8 +30,8 @@
 }
 
 : "aws saml login configuration" && {
-  export AWS_PROFILE=saml
-  export SAML2AWS_PROFILE=saml
+  # export AWS_PROFILE=saml
+  # export SAML2AWS_PROFILE=saml
 }
 
 : 'others' && {
