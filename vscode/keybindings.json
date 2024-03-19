@@ -38,7 +38,7 @@
     "command": "workbench.action.openQuickChat.copilot"
   },
   {
-    "key": "ctrl+i",
+    "key": "ctrl+cmd+i",
     "command": "inlineChat.start",
     "when": "inlineChatHasProvider && !editorReadonly"
   }
