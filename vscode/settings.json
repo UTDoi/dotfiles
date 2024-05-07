@@ -111,10 +111,13 @@
   "vsicons.dontShowNewVersionMessage": true,
   "window.zoomLevel": 1,
   "terminal.integrated.defaultProfile.linux": "zsh",
-  "rubyLsp.rubyVersionManager": "asdf",
+  "rubyLsp.rubyVersionManager": {
+    "identifier": "asdf"
+  },
   "rubyLsp.formatter": "syntax_tree",
   "editor.inlineSuggest.enabled": true,
   "[ruby]": {
-    "editor.defaultFormatter": "Shopify.ruby-lsp",
+    "editor.defaultFormatter": "Shopify.ruby-lsp"
   },
+  "github.copilot.chat.localeOverride": "ja"
 }
