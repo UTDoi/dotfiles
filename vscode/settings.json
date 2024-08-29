@@ -22,7 +22,7 @@
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
   "files.insertFinalNewline": true,
-  "vim.useSystemClipboard": true,
+  "vim.useSystemClipboard": false,
   "vim.highlightedyank.enable": true,
   "vim.insertModeKeyBindings": [
     {
@@ -66,6 +66,26 @@
     {
       "before": ["s", "p"],
       "after": ["<ctrl+w>", "p"]
+    },
+    // This is a workaround for vscode 1.90 bug
+    // https://github.com/VSCodeVim/Vim/issues/9061
+    {
+      "before": [
+        "<C-w>",
+        "v"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ]
+    },
+    {
+      "before": [
+        "<C-w>",
+        "p"
+      ],
+      "commands": [
+        "workbench.action.splitEditorDown"
+      ]
     },
     {
       "before": ["Y"],
@@ -119,5 +139,6 @@
   "[ruby]": {
     "editor.defaultFormatter": "Shopify.ruby-lsp"
   },
-  "github.copilot.chat.localeOverride": "ja"
+  "github.copilot.chat.localeOverride": "ja",
+  "github.copilot.editor.enableAutoCompletions": true,
 }
