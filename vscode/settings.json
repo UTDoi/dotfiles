@@ -70,22 +70,12 @@
     // This is a workaround for vscode 1.90 bug
     // https://github.com/VSCodeVim/Vim/issues/9061
     {
-      "before": [
-        "<C-w>",
-        "v"
-      ],
-      "commands": [
-        "workbench.action.splitEditor"
-      ]
+      "before": ["<C-w>", "v"],
+      "commands": ["workbench.action.splitEditor"]
     },
     {
-      "before": [
-        "<C-w>",
-        "p"
-      ],
-      "commands": [
-        "workbench.action.splitEditorDown"
-      ]
+      "before": ["<C-w>", "p"],
+      "commands": ["workbench.action.splitEditorDown"]
     },
     {
       "before": ["Y"],
@@ -141,4 +131,5 @@
   },
   "github.copilot.chat.localeOverride": "ja",
   "github.copilot.editor.enableAutoCompletions": true,
+  "application.shellEnvironmentResolutionTimeout": 30
 }
