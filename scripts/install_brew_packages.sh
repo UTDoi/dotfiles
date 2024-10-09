@@ -89,13 +89,6 @@ install_brew_packages() {
     fi
   done
 
-  if ! is_exists saml2aws; then
-    brew tap versent/homebrew-taps
-    brew install saml2aws
-  else
-    log_info "saml2aws has been already installed."
-  fi
-
   if is_darwin; then
     for target in ${target_brew_list_for_mac_os[@]}; do
       if ! is_exists "$target"; then
