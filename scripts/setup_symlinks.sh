@@ -5,7 +5,6 @@ source $DOTFILES_DIR/scripts/utils.sh
 
 # files placed at $HOME/
 TARGET_DOTFILES=(
-  .commit_template
   .gitconfig
   .gitignore_global
   .p10k.zsh

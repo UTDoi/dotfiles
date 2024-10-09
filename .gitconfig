@@ -21,8 +21,6 @@
   showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...develop | grep 'Merge pull request #' | head -n 1;  }; f"
 [init]
   templatedir = ~/.git_template
-[commit]
-  template = ~/.commit_template
 [pull]
   rebase = false
 [ghq]
