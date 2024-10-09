@@ -11,11 +11,7 @@ install_tools() {
     if !(is_exists "brew"); then
       log_info "installing Homebrew ..."
       /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-
-      # for M1
-      if [[ "$(arch)" == "arm64" ]]; then
-        eval "$(/opt/homebrew/bin/brew shellenv)"
-      fi
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     fi
 
     log_info "installing brew packages ..."
@@ -27,7 +23,9 @@ install_tools() {
     fi
   fi
 
-  # aptで必要なツールを持ってくる処理
+  if is_linux; then
+    # install tools
+  fi
 
   if [ ! -d ~/.zinit ]; then
     mkdir ~/.zinit

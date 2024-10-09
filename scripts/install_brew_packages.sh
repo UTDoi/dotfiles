@@ -31,7 +31,6 @@ target_brew_list=(
   libevent
   libmagic
   libpq
-  mysql-client@5.7
   neovim
   nghttp2
   protobuf
@@ -61,7 +60,6 @@ target_brew_list_for_mac_os=(
   python@3.8
   python@3.9
   python@3.10
-  "goldeneggg/tap/lsec2"
 )
 
 # GUI tools
