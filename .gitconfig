@@ -25,11 +25,6 @@
   rebase = false
 [ghq]
   root = ~/src
-# TODO: includeIf で特定repoの場合のみ読み替えするようにする
-[url "ssh://git@github.com"]
-  insteadOf = git://git@github.com
-[url "ssh://git@github.com"]
-  insteadOf = https://github.com
 [credential]
   helper = osxkeychain
 [secrets]
