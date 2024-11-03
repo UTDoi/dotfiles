@@ -12,7 +12,7 @@ target_brew_list=(
   llvm
   ccls
   direnv
-  exa
+  eza
   fd
   fzf
   gh

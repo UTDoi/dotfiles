@@ -76,7 +76,7 @@ fi
 }
 
 : 'paths' && {
-  export PATH=$PATH:$DOTPATH/bin
+  export PATH=$PATH:$DOTPATH/bin:opt/homebrew/opt
 }
 
 : 'configuration for common' && {
@@ -153,12 +153,12 @@ fi
   fi
 
 
-  if (($+commands[exa])); then
-    alias ls="exa -F"
-    alias ll="exa -hlBFS"
-    alias ld="exa -ld"
-    alias la="exa -aF"
-    alias lla="exa -alBFS --icons"
+  if (($+commands[eza])); then
+    alias ls="eza -F"
+    alias ll="eza -hlBSF"
+    alias ld="eza -ld"
+    alias la="eza -aF"
+    alias lla="eza -alBSF --icons"
   else
     alias ls="ls -F"
     alias ll="ls -hlS"
