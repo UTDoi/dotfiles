@@ -23,10 +23,6 @@ install_tools() {
     fi
   fi
 
-  if is_linux; then
-    # install tools
-  fi
-
   if [ ! -d ~/.zinit ]; then
     mkdir ~/.zinit
     git clone https://github.com/zdharma-continuum/zinit.git ~/.zinit/bin
