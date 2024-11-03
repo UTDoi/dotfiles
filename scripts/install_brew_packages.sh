@@ -57,23 +57,15 @@ target_brew_list_for_mac_os=(
   gawk
   gnu-tar
   wget
-  python@3.8
-  python@3.9
-  python@3.10
 )
 
 # GUI tools
 target_brew_cask_list=(
   alfred
-  chromedriver
   clipy
-  dbeaver-community
-  docker
-  google-chrome
   hammerspoon
   iterm2
   karabiner-elements
-  slack
   visual-studio-code
   postman
 )
