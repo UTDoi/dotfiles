@@ -317,3 +317,4 @@ fi
   }
 }
 
+. $HOME/.local_zshrc
