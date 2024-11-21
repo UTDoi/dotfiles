@@ -124,5 +124,6 @@
   "editor.inlineSuggest.enabled": true,
   "github.copilot.chat.localeOverride": "ja",
   "github.copilot.editor.enableAutoCompletions": true,
-  "application.shellEnvironmentResolutionTimeout": 30
+  "application.shellEnvironmentResolutionTimeout": 30,
+  "go.testEnvFile": "${workspaceFolder}/.env.private"
 }
