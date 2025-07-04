@@ -19,6 +19,8 @@
   st = status
   cb = checkout -b
   showpr = !"f() { git log --merges --oneline --reverse --ancestry-path $1...develop | grep 'Merge pull request #' | head -n 1;  }; f"
+  wb = "!f() { WORKTREE_PATH=../$(basename $(pwd))-${1}; git worktree add $WORKTREE_PATH $2; }; f"
+  wd = worktree remove .
 [init]
   templatedir = ~/.git_template
 [pull]

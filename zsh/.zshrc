@@ -236,6 +236,22 @@ fi
     aws ec2 wait instance-stopped --instance-ids $MY_DEV_INSTANCE_ID &&
     echo "**Now instance is down**"
   }
+
+  select_worktree() {
+    local worktrees
+    worktrees=$(git worktree list --porcelain | awk '/worktree / {print $2}')
+    if [[ -z "$worktrees" ]]; then
+      echo "No worktrees found."
+      return 1
+    fi
+    local selected
+    selected=$(echo "$worktrees" | fzf)
+    if [[ -n "$selected" ]]; then
+      echo "$selected"
+      cd "$selected"
+    fi
+  }
+  zle -N select_worktree
 }
 
 : 'bindkeys' && {
@@ -254,6 +270,7 @@ fi
   bindkey '^]' fbr
   bindkey '^z' fzf-z-search
   bindkey '^s' step
+  bindkey '^w' select_worktree
 }
 
 : 'zinit plugins' && {
