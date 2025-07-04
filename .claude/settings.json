@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "List(*)",
+      "Fetch(https://*)",
+      "Bash(ls:*)",
+      "Bash(rg:*)",
+      "Bash(mv:*)"
+    ],
+    "deny": [
+      "Read(.env)",
+      "Edit(.env)"
+    ]
+  }
+}

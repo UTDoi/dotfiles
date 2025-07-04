@@ -8,7 +8,6 @@ TARGET_DOTFILES=(
   .gitconfig
   .gitignore_global
   .p10k.zsh
-  .pryrc
   .tigrc
   .tmux.conf
   .zshenv
@@ -34,6 +33,12 @@ TARGET_VSCODE_SETTING_FILES=(
   keybindings.json
 )
 
+# files placed at $HOME/.claude/
+TARGET_CLAUDE_FILES=(
+  CLAUDE.md
+  settings.json
+)
+
 VSCODE_SETTING_DIR="$HOME/Library/Application Support/Code/User"
 
 get_file_path_in_dotfiles_dir() {
@@ -42,6 +47,10 @@ get_file_path_in_dotfiles_dir() {
 
 get_file_path_in_vscode_dir() {
   find $DOTFILES_DIR/vscode -type f -name "$1" -maxdepth 1
+}
+
+get_file_path_in_claude_dir() {
+  find $DOTFILES_DIR/.claude -type f -name "$1" -maxdepth 1
 }
 
 get_dir_path_in_dotfiles_dir() {
@@ -78,10 +87,22 @@ link_to_vscode_setting_dir() {
   done
 }
 
+link_to_claude_dir() {
+  if [ ! -d ~/.claude ]; then
+    mkdir ~/.claude
+  fi
+
+  for TARGET_CLAUDE_FILE in ${TARGET_CLAUDE_FILES[@]}; do
+    TARGET_PATH=`get_file_path_in_claude_dir $TARGET_CLAUDE_FILE`
+    ln -snfv $TARGET_PATH $HOME/.claude
+  done
+}
+
 setup_symlinks() {
   log_info "Start setup symbolic link..."
   link_to_home
   link_to_config_dir
+  link_to_claude_dir
   if is_darwin; then
     link_to_vscode_setting_dir
   fi
