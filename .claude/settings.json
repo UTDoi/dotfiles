@@ -242,7 +242,8 @@
       "TodoWrite(**)",
       "Task(**)",
       "List(*)",
-      "Fetch(https://*)"
+      "Fetch(https://*)",
+      "jira-advanced:jira_get_issue"
     ],
     "deny": [
       "Bash(rm -rf /)",
