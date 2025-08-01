@@ -39,6 +39,11 @@ TARGET_CLAUDE_FILES=(
   settings.json
 )
 
+# directories placed at $HOME/.claude/
+TARGET_CLAUDE_DIRS=(
+  commands
+)
+
 VSCODE_SETTING_DIR="$HOME/Library/Application Support/Code/User"
 
 get_file_path_in_dotfiles_dir() {
@@ -51,6 +56,10 @@ get_file_path_in_vscode_dir() {
 
 get_file_path_in_claude_dir() {
   find $DOTFILES_DIR/.claude -type f -name "$1" -maxdepth 1
+}
+
+get_dir_path_in_claude_dir() {
+  find $DOTFILES_DIR/.claude -type d -name "$1" -maxdepth 1
 }
 
 get_dir_path_in_dotfiles_dir() {
@@ -94,6 +103,11 @@ link_to_claude_dir() {
 
   for TARGET_CLAUDE_FILE in ${TARGET_CLAUDE_FILES[@]}; do
     TARGET_PATH=`get_file_path_in_claude_dir $TARGET_CLAUDE_FILE`
+    ln -snfv $TARGET_PATH $HOME/.claude
+  done
+
+  for TARGET_CLAUDE_DIR in ${TARGET_CLAUDE_DIRS[@]}; do
+    TARGET_PATH=`get_dir_path_in_claude_dir $TARGET_CLAUDE_DIR`
     ln -snfv $TARGET_PATH $HOME/.claude
   done
 }
