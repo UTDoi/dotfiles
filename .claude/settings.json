@@ -1,5 +1,12 @@
 {
+  "$schema": "https://json.schemastore.org/claude-code-settings.json",
   "cleanupPeriodDays": 30,
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
+    "DISABLE_COST_WARNINGS": "0",
+    "MAX_THINKING_TOKENS": "31999",
+    "SHELL": "/usr/local/bin/zsh"
+  },
   "permissions": {
     "allow": [
       "Bash(npm:*)",
@@ -314,11 +321,31 @@
       "Read(**/*key*)"
     ]
   },
-  "env": {
-    "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
-    "DISABLE_COST_WARNINGS": "0",
-    "MAX_THINKING_TOKENS": "31999",
-    "SHELL": "/usr/local/bin/zsh"
+  "hooks": {
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Claude Code is requesting permission\" with title \"Claude Code\" subtitle \"Waiting for confirmation\" sound name \"Glass\"'"
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "osascript -e 'display notification \"Task completed\" with title \"Claude Code\" subtitle \"Processing completed\" sound name \"Hero\"'"
+          }
+        ]
+      }
+    ]
   },
-  "preferredNotifChannel": "terminal_bell"
+  "feedbackSurveyState": {
+    "lastShownTime": 1754033742335
+  }
 }
