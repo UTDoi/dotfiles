@@ -5,7 +5,8 @@
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "DISABLE_COST_WARNINGS": "0",
     "MAX_THINKING_TOKENS": "31999",
-    "SHELL": "/usr/local/bin/zsh"
+    "SHELL": "/usr/local/bin/zsh",
+    "API_TIMEOUT_MS": "600000"
   },
   "permissions": {
     "allow": [
@@ -346,6 +347,6 @@
     ]
   },
   "feedbackSurveyState": {
-    "lastShownTime": 1754033742335
+    "lastShownTime": 1754050831024
   }
 }
