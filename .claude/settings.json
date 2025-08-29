@@ -6,7 +6,8 @@
     "DISABLE_COST_WARNINGS": "0",
     "MAX_THINKING_TOKENS": "31999",
     "SHELL": "/usr/local/bin/zsh",
-    "API_TIMEOUT_MS": "600000"
+    "API_TIMEOUT_MS": "600000",
+    "DISABLE_MICROCOMPACT": true
   },
   "permissions": {
     "allow": [

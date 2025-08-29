@@ -8,8 +8,6 @@ This is my global Claude Code configuration directory (`~/.claude`) that sets up
 - Professional development standards and workflows
 - Language-specific best practices (Go)
 - Permission rules for tool usage
-- Environment variables for development
-- Session history and todo management
 
 ## 🧠 Proactive AI Assistance
 
