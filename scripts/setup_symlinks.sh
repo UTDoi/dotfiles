@@ -37,6 +37,7 @@ TARGET_VSCODE_SETTING_FILES=(
 TARGET_CLAUDE_FILES=(
   CLAUDE.md
   settings.json
+  statusline.js
 )
 
 # directories placed at $HOME/.claude/
