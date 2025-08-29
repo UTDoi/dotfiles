@@ -347,6 +347,10 @@
       }
     ]
   },
+  "statusLine": {
+    "type": "command",
+    "command": "input=$(cat); current_dir=\"$(echo \"$input\" | jq -r '.workspace.current_dir')\"; short_dir=\"$(basename \"$current_dir\")\"; git_info=\"$(cd \"$current_dir\" 2>/dev/null && git branch --show-current 2>/dev/null && git -c color.ui=never status --porcelain 2>/dev/null | head -5 | wc -l | tr -d ' ' | sed 's/^0$//' | sed 's/.*/+&/')\"; git_output=\"$(echo \"$git_info\" | tr '\n' ' ' | sed 's/ *$//' | sed 's/^/git:/' | sed 's/git:$//')\"; user_host=\"$(whoami)@$(hostname -s)\"; printf \"\\033[2m%s\\033[0m %s %s\" \"$user_host\" \"$short_dir\" \"$git_output\""
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1754050831024
   }
