@@ -207,7 +207,6 @@
       "Glob(**)",
       "LS(**)",
       "WebFetch(domain:*)",
-      "WebSearch(*)",
       "Write(~/projects/**)",
       "Write(~/work/**)",
       "Write(~/dev/**)",
@@ -250,8 +249,7 @@
       "TodoWrite(**)",
       "Task(**)",
       "List(*)",
-      "Fetch(https://*)",
-      "jira-advanced:jira_get_issue"
+      "Fetch(https://*)"
     ],
     "deny": [
       "Bash(rm:*)",
@@ -268,10 +266,6 @@
       "Bash(>> /dev/*)",
       "Bash(chmod 777 /*)",
       "Bash(chown root:*)",
-      "Bash(curl * | sh)",
-      "Bash(curl * | bash)",
-      "Bash(wget * | sh)",
-      "Bash(wget * | bash)",
       "Bash(docker system prune -af)",
       "Bash(npm publish:*)",
       "Bash(cargo publish:*)",
