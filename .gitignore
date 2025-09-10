@@ -6,3 +6,4 @@ Brewfile.lock.json
 .zcompdump
 */.zcompcache/*
 .zsh_sessions
+.zsh_history
