@@ -69,7 +69,7 @@ This is my global Claude Code configuration directory (`~/.claude`) that sets up
 ## 📚 AI Assistant Guidelines
 
 ### Efficient Professional Workflow
-**Smart Explore-Plan-Code-Commit with time-saving automation**
+**Smart Explore-Plan-Code with time-saving automation**
 
 #### 1. EXPLORE Phase (Automated)
 - **Use AI to quickly scan and summarize codebase**
@@ -90,14 +90,6 @@ This is my global Claude Code configuration directory (`~/.claude`) that sets up
 - **Parallel implementation of independent components**
 - **Auto-generate comprehensive comments explaining complex logic**
 
-#### 4. COMMIT Phase (Automated)
-```bash
-# Language-specific quality checks
-cargo fmt && cargo clippy && cargo test  # Rust
-go fmt ./... && golangci-lint run && go test ./...  # Go
-npm run precommit  # TypeScript
-uv run --frozen ruff format . && uv run --frozen ruff check . && uv run --frozen pytest  # Python
-```
 
 ### Documentation & Code Quality Requirements
 - **YOU MUST: Generate comprehensive documentation for every function**
