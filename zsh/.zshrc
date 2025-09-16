@@ -270,7 +270,7 @@ fi
   bindkey '^]' fbr
   bindkey '^z' fzf-z-search
   bindkey '^s' step
-  bindkey '^w' select_worktree
+  bindkey '^v' select_worktree
 }
 
 : 'zinit plugins' && {
