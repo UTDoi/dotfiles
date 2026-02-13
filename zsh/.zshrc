@@ -252,6 +252,21 @@ fi
     fi
   }
   zle -N select_worktree
+
+  function claude-review() {
+    if [ -z "$1" ]; then
+      echo "Usage: claude-review <PR_NUMBER>"
+      return 1
+    fi
+
+    local pr_number=$1
+    echo "Fetching review comments for PR #$pr_number..."
+
+    gh api repos/:owner/:repo/pulls/"$pr_number"/comments \
+      --jq '.[] | "--- File: \(.path) (Lines: \(.start_line // .line // .original_line)-\(.line // .original_line)) (User: \(.user.login)) ---\n\(.body)\n"' \
+      | claude "Review the provided GitHub comments (including line-specific suggestions) and apply the necessary changes to the local codebase. Open the relevant files and address each feedback point accordingly."
+  }
+  alias cr='claude-review'
 }
 
 : 'bindkeys' && {
