@@ -28,21 +28,6 @@ if [[ ! -n $TMUX ]] && [[ $- == *l* ]] && [[ $TERM_PROGRAM != "vscode" ]]; then
   fi
 fi
 
-# asdfで管理してるtoolが多いのでこれを先頭に置かないとダメ！
-: 'asdf initialize' && {
-  if is_darwin; then
-    if [[ "$(arch)" == "arm64" ]]; then
-      . /opt/homebrew/opt/asdf/libexec/asdf.sh
-    else
-      . /usr/local/opt/asdf/libexec/asdf.sh
-    fi
-  else
-    export ASDF_DATA_DIR=/opt/asdf-data
-    . /opt/asdf/asdf.sh
-    fpath=(${ASDF_DIR}/completions $fpath)
-  fi
-}
-
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/dotfiles/zsh/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -77,6 +62,7 @@ fi
 
 : 'paths' && {
   export PATH=$PATH:$DOTPATH/bin:opt/homebrew/opt
+  export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 }
 
 : 'configuration for common' && {
