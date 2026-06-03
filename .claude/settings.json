@@ -313,7 +313,10 @@
       "Read(id_rsa)",
       "Read(id_ed25519)",
       "Read(**/*token*)",
-      "Read(**/*key*)"
+      "Read(**/*.key)",
+      "Read(**/*api_key*)",
+      "Read(**/*secret_key*)",
+      "Read(**/*private_key*)"
     ]
   },
   "hooks": {
