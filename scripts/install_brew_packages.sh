@@ -26,8 +26,11 @@ target_brew_list=(
   pango
   librsvg
   graphviz
+  grpcurl
   jq
+  jira-cli
   krb5
+  k9s
   libevent
   libmagic
   libpq
