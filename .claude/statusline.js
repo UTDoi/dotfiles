@@ -5,7 +5,30 @@ const path = require('path');
 const readline = require('readline');
 
 // Constants
-const COMPACTION_THRESHOLD = 200000 * 0.8
+// Fraction of the context window at which Claude Code triggers auto-compaction.
+const COMPACTION_RATIO = 0.8;
+// Known context-window sizes (tokens).
+const DEFAULT_CONTEXT_LIMIT = 200000;
+const LARGE_CONTEXT_LIMIT = 1000000;
+
+/**
+ * Decide the context-window size for this session.
+ *
+ * Priority:
+ *   1. CLAUDE_CONTEXT_LIMIT env var (explicit override)
+ *   2. Auto-detect: if context ever exceeded the default window, the session
+ *      must be running on the 1M-token window (200k would have compacted).
+ *   3. Fall back to the default 200k window.
+ *
+ * @param {number} peakTokens Highest context occupancy observed in the session.
+ * @returns {number} Context-window size in tokens.
+ */
+function getContextLimit(peakTokens) {
+  const override = parseInt(process.env.CLAUDE_CONTEXT_LIMIT, 10);
+  if (Number.isFinite(override) && override > 0) return override;
+  if (peakTokens > DEFAULT_CONTEXT_LIMIT) return LARGE_CONTEXT_LIMIT;
+  return DEFAULT_CONTEXT_LIMIT;
+}
 
 // Read JSON from stdin
 let input = '';
@@ -21,6 +44,7 @@ process.stdin.on('end', async () => {
 
     // Calculate token usage for current session
     let totalTokens = 0;
+    let peakTokens = 0;
 
     if (sessionId) {
       // Find all transcript files
@@ -37,15 +61,18 @@ process.stdin.on('end', async () => {
           const transcriptFile = path.join(projectDir, `${sessionId}.jsonl`);
 
           if (fs.existsSync(transcriptFile)) {
-            totalTokens = await calculateTokensFromTranscript(transcriptFile);
+            ({ totalTokens, peakTokens } = await calculateTokensFromTranscript(transcriptFile));
             break;
           }
         }
       }
     }
 
+    // Resolve the compaction threshold from the (possibly auto-detected) window.
+    const compactionThreshold = getContextLimit(peakTokens) * COMPACTION_RATIO;
+
     // Calculate percentage
-    const percentage = Math.min(100, Math.round((totalTokens / COMPACTION_THRESHOLD) * 100));
+    const percentage = Math.min(100, Math.round((totalTokens / compactionThreshold) * 100));
 
     // Format token display
     const tokenDisplay = formatTokenCount(totalTokens);
@@ -65,9 +92,31 @@ process.stdin.on('end', async () => {
   }
 });
 
+/**
+ * Sum the token counts of a single usage entry into a context-occupancy figure.
+ *
+ * @param {object} usage An assistant message's `usage` object.
+ * @returns {number} input + output + cache (creation + read) tokens.
+ */
+function usageToTokens(usage) {
+  return (usage.input_tokens || 0) +
+    (usage.output_tokens || 0) +
+    (usage.cache_creation_input_tokens || 0) +
+    (usage.cache_read_input_tokens || 0);
+}
+
+/**
+ * Scan a transcript for token usage.
+ *
+ * @param {string} filePath Path to the session's `.jsonl` transcript.
+ * @returns {Promise<{totalTokens: number, peakTokens: number}>}
+ *   `totalTokens` is the latest message's context occupancy (current usage);
+ *   `peakTokens` is the highest occupancy seen, used to detect a 1M window.
+ */
 async function calculateTokensFromTranscript(filePath) {
   return new Promise((resolve, reject) => {
     let lastUsage = null;
+    let peakTokens = 0;
 
     const fileStream = fs.createReadStream(filePath);
     const rl = readline.createInterface({
@@ -82,6 +131,7 @@ async function calculateTokensFromTranscript(filePath) {
         // Check if this is an assistant message with usage data
         if (entry.type === 'assistant' && entry.message?.usage) {
           lastUsage = entry.message.usage;
+          peakTokens = Math.max(peakTokens, usageToTokens(lastUsage));
         }
       } catch (e) {
         // Skip invalid JSON lines
@@ -89,16 +139,8 @@ async function calculateTokensFromTranscript(filePath) {
     });
 
     rl.on('close', () => {
-      if (lastUsage) {
-        // The last usage entry contains cumulative tokens
-        const totalTokens = (lastUsage.input_tokens || 0) +
-          (lastUsage.output_tokens || 0) +
-          (lastUsage.cache_creation_input_tokens || 0) +
-          (lastUsage.cache_read_input_tokens || 0);
-        resolve(totalTokens);
-      } else {
-        resolve(0);
-      }
+      const totalTokens = lastUsage ? usageToTokens(lastUsage) : 0;
+      resolve({ totalTokens, peakTokens });
     });
 
     rl.on('error', (err) => {
