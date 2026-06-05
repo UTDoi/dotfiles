@@ -1,3 +1,4 @@
+#!/usr/bin/env zsh
 () {
   local src
   for src in $@; do
