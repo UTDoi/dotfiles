@@ -4,7 +4,7 @@
   "env": {
     "CLAUDE_CODE_ENABLE_TELEMETRY": "0",
     "DISABLE_COST_WARNINGS": "0",
-    "SHELL": "/usr/local/bin/zsh",
+    "SHELL": "/bin/zsh",
     "API_TIMEOUT_MS": "600000",
     "DISABLE_MICROCOMPACT": "true"
   },
@@ -250,12 +250,14 @@
       "List(*)",
       "Fetch(https://*)"
     ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)"
+    ],
     "deny": [
       "Bash(rm:*)",
       "Bash(rm -rf:*)",
       "Bash(sudo:*)",
-      "Bash(git push:*)",
-      "Bash(git commit:*)",
       "Bash(git reset:*)",
       "Bash(git rebase:*)",
       "Bash(dd:*)",
@@ -319,7 +321,20 @@
       "Read(**/*private_key*)"
     ]
   },
+  "model": "claude-opus-4-6[1m]",
   "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Bash(git push *)",
+            "command": "jq -r '.tool_input.command' | grep -qE 'git push.*[ /:](main|master|develop)( |$)' && echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Pushing to main/master is blocked. Use a feature branch.\"}}' || true"
+          }
+        ]
+      }
+    ],
     "Notification": [
       {
         "matcher": "",

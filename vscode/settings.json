@@ -17,8 +17,8 @@
   "diffEditor.ignoreTrimWhitespace": true,
   "terminal.integrated.profiles.osx": {
     "zsh": {
-      "path": "/usr/local/bin/zsh"
-    }
+      "path": "/usr/local/bin/zsh",
+    },
   },
   "terminal.integrated.defaultProfile.osx": "zsh",
   "files.insertFinalNewline": true,
@@ -27,86 +27,86 @@
   "vim.insertModeKeyBindings": [
     {
       "before": ["j", "j"],
-      "after": ["<Esc>"]
+      "after": ["<Esc>"],
     },
     {
       "before": ["っ", "ｊ"],
-      "after": ["<Esc>"]
-    }
+      "after": ["<Esc>"],
+    },
   ],
   "vim.normalModeKeyBindings": [
     {
       "before": ["j"],
-      "after": ["g", "j"]
+      "after": ["g", "j"],
     },
     {
       "before": ["k"],
-      "after": ["g", "k"]
+      "after": ["g", "k"],
     },
     {
       "before": ["<ctrl+h>"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["<ctrl+l>"],
-      "after": ["$"]
+      "after": ["$"],
     },
     {
       "before": ["s", "h"],
-      "after": ["<ctrl+w>", "h"]
+      "after": ["<ctrl+w>", "h"],
     },
     {
       "before": ["s", "l"],
-      "after": ["<ctrl+w>", "l"]
+      "after": ["<ctrl+w>", "l"],
     },
     {
       "before": ["s", "v"],
-      "after": ["<ctrl+w>", "v"]
+      "after": ["<ctrl+w>", "v"],
     },
     {
       "before": ["s", "p"],
-      "after": ["<ctrl+w>", "p"]
+      "after": ["<ctrl+w>", "p"],
     },
     // This is a workaround for vscode 1.90 bug
     // https://github.com/VSCodeVim/Vim/issues/9061
     {
       "before": ["<C-w>", "v"],
-      "commands": ["workbench.action.splitEditor"]
+      "commands": ["workbench.action.splitEditor"],
     },
     {
       "before": ["<C-w>", "p"],
-      "commands": ["workbench.action.splitEditorDown"]
+      "commands": ["workbench.action.splitEditorDown"],
     },
     {
       "before": ["Y"],
-      "after": ["y", "$"]
+      "after": ["y", "$"],
     },
     {
       "before": ["<C-k>"],
-      "after": ["g", "b"]
-    }
+      "after": ["g", "b"],
+    },
   ],
   "vim.visualModeKeyBindings": [
     {
       "before": ["<ctrl+h>"],
-      "after": ["^"]
+      "after": ["^"],
     },
     {
       "before": ["<ctrl+l>"],
-      "after": ["$"]
+      "after": ["$"],
     },
     {
       "before": ["j"],
-      "after": ["g", "j"]
+      "after": ["g", "j"],
     },
     {
       "before": ["k"],
-      "after": ["g", "k"]
+      "after": ["g", "k"],
     },
     {
       "before": ["<C-k>"],
-      "after": ["g", "b"]
-    }
+      "after": ["g", "b"],
+    },
   ],
   "vim.hlsearch": true,
   "vim.visualstar": true,
@@ -124,5 +124,6 @@
   "editor.inlineSuggest.enabled": true,
   "github.copilot.chat.localeOverride": "ja",
   "github.copilot.editor.enableAutoCompletions": true,
-  "application.shellEnvironmentResolutionTimeout": 30
+  "application.shellEnvironmentResolutionTimeout": 30,
+  "security.workspace.trust.untrustedFiles": "open",
 }
