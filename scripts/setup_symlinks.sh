@@ -42,7 +42,7 @@ TARGET_CLAUDE_FILES=(
 
 # directories placed at $HOME/.claude/
 TARGET_CLAUDE_DIRS=(
-  commands
+  hooks
 )
 
 VSCODE_SETTING_DIR="$HOME/Library/Application Support/Code/User"
@@ -104,12 +104,20 @@ link_to_claude_dir() {
 
   for TARGET_CLAUDE_FILE in ${TARGET_CLAUDE_FILES[@]}; do
     TARGET_PATH=`get_file_path_in_claude_dir $TARGET_CLAUDE_FILE`
-    ln -snfv $TARGET_PATH $HOME/.claude
+    if [ -n "$TARGET_PATH" ]; then
+      ln -snfv $TARGET_PATH $HOME/.claude
+    else
+      log_warn "Not found in dotfiles: .claude/$TARGET_CLAUDE_FILE"
+    fi
   done
 
   for TARGET_CLAUDE_DIR in ${TARGET_CLAUDE_DIRS[@]}; do
     TARGET_PATH=`get_dir_path_in_claude_dir $TARGET_CLAUDE_DIR`
-    ln -snfv $TARGET_PATH $HOME/.claude
+    if [ -n "$TARGET_PATH" ]; then
+      ln -snfv $TARGET_PATH $HOME/.claude
+    else
+      log_warn "Not found in dotfiles: .claude/$TARGET_CLAUDE_DIR"
+    fi
   done
 }
 
