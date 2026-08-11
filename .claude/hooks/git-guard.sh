@@ -12,6 +12,13 @@ emit() {
   exit 0
 }
 
+# Resolve effective git directory: if the command starts with "cd <dir> &&",
+# git operations should be evaluated in that directory, not the hook's CWD.
+git_dir="."
+if dir=$(printf '%s' "$cmd" | sed -nE 's/^cd[[:space:]]+"?([^";&]+[^"[:space:];&])"?[[:space:]]*&&.*/\1/p') && [ -n "$dir" ]; then
+  git_dir="$dir"
+fi
+
 if printf '%s' "$cmd" | grep -q 'git push'; then
   # force push: --force-with-lease asks, --force/-f/+refspec is denied
   printf '%s' "$cmd" | grep -qE '(^|[[:space:]])--force-with-lease(=[^[:space:]]*)?([[:space:]]|$)' \
@@ -23,8 +30,8 @@ if printf '%s' "$cmd" | grep -q 'git push'; then
     && emit deny "Remote branch/tag deletion is blocked."
   # push to protected branches: explicit in command, or current branch is protected.
   # Personal repos (github.com/UTDoi/*) are exempt; the ask rule on git push still prompts.
-  branch=$(git symbolic-ref --short HEAD 2>/dev/null || echo "")
-  remote=$(git remote get-url origin 2>/dev/null || echo "")
+  branch=$(git -C "$git_dir" symbolic-ref --short HEAD 2>/dev/null || echo "")
+  remote=$(git -C "$git_dir" remote get-url origin 2>/dev/null || echo "")
   case "$remote" in
     *github.com[:/]UTDoi/*) : ;;
     *)
