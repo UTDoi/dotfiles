@@ -43,6 +43,7 @@ TARGET_CLAUDE_FILES=(
 # directories placed at $HOME/.claude/
 TARGET_CLAUDE_DIRS=(
   hooks
+  rules
 )
 
 VSCODE_SETTING_DIR="$HOME/Library/Application Support/Code/User"
