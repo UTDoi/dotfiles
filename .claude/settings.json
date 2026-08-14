@@ -340,11 +340,14 @@
       }
     ]
   },
+  "showThinkingSummaries": true,
+  "skillListingBudgetFraction": 0.05,
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.js"
   },
   "feedbackSurveyState": {
     "lastShownTime": 1754050831024
-  }
+  },
+  "enabledPlugins": {}
 }
