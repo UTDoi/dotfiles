@@ -1,5 +1,6 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "skillListingBudgetFraction": 0.05,
   "permissions": {
     "allow": [
       "Bash(npm:*)",
@@ -220,22 +221,6 @@
       "Edit(~/.config/**)",
       "WebFetch(domain:*)"
     ],
-    "ask": [
-      "Bash(git commit:*)",
-      "Bash(git push:*)",
-      "Bash(git reset:*)",
-      "Bash(git rebase:*)",
-      "Bash(git restore:*)",
-      "Bash(git clean:*)",
-      "Bash(git stash drop:*)",
-      "Bash(git stash clear:*)",
-      "Bash(gh pr merge:*)",
-      "Bash(kubectl:*)",
-      "Bash(terraform:*)",
-      "Bash(git config:*)",
-      "Bash(docker:*)",
-      "Bash(docker-compose:*)"
-    ],
     "deny": [
       "Bash(rm:*)",
       "Bash(sudo:*)",
@@ -296,9 +281,24 @@
       "Edit(~/.config/gh/**)",
       "Read(~/.npmrc)",
       "Read(**/.git-credentials)"
+    ],
+    "ask": [
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "Bash(git reset:*)",
+      "Bash(git rebase:*)",
+      "Bash(git restore:*)",
+      "Bash(git clean:*)",
+      "Bash(git stash drop:*)",
+      "Bash(git stash clear:*)",
+      "Bash(gh pr merge:*)",
+      "Bash(kubectl:*)",
+      "Bash(terraform:*)",
+      "Bash(git config:*)",
+      "Bash(docker:*)",
+      "Bash(docker-compose:*)"
     ]
   },
-  "model": "claude-opus-4-6[1m]",
   "hooks": {
     "PreToolUse": [
       {
@@ -334,14 +334,12 @@
       }
     ]
   },
-  "showThinkingSummaries": true,
-  "skillListingBudgetFraction": 0.05,
   "statusLine": {
     "type": "command",
     "command": "~/.claude/statusline.js"
   },
-  "feedbackSurveyState": {
-    "lastShownTime": 1754050831024
-  },
-  "enabledPlugins": {}
+  "showThinkingSummaries": true,
+  "theme": "dark-daltonized",
+  "editorMode": "vim",
+  "preferredNotifChannel": "terminal_bell"
 }
