@@ -7,3 +7,4 @@ Brewfile.lock.json
 */.zcompcache/*
 .zsh_sessions
 .zsh_history
+.claude/rules/*.local.md
